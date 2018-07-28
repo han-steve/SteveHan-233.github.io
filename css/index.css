@@ -1,6 +1,4 @@
-* {
-    font-family: "Open Sans";
-}
+
 body {
     background-color: #313131;
     font-family: "Open Sans";
@@ -62,6 +60,7 @@ nav {
     top: 170px;
     left: 28px;
     color: #CBCACA;
+    font-family: "Open Sans";
     font-size: 1.4em;
     display: none;
     width: 110px;
