@@ -1,0 +1,334 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot');
+    src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix') format('embedded-opentype'),
+         url('/surface/Assets/css/fonts/all/normal/segoeui.woff') format('woff'),
+         url('/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Semibold';
+    src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot');
+    src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot?#iefix') format('embedded-opentype'),
+         url('/surface/Assets/css/fonts/all/semibold/seguisb.woff') format('woff'),
+         url('/surface/Assets/css/fonts/all/semibold/seguisb.svg#SegoeUISemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot');
+    src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot?#iefix') format('eot'), /* Wrong format will tell IE9+ to ignore and use WOFF instead. MSHAR-2822 */
+         url('/surface/Assets/css/fonts/all/bold/segoeuib.woff') format('woff'),
+         url('/surface/Assets/css/fonts/all/bold/segoeuib.svg#SegoeUIBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Light';
+    src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot');
+    src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot?#iefix') format('embedded-opentype'),
+         url('/surface/Assets/css/fonts/all/light/segoeuil.woff') format('woff'),
+         url('/surface/Assets/css/fonts/all/light/segoeuil.svg#SegoeUILight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: #313131;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CBCACA;
+    padding: 7px;
+    padding-right: 23px;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 15px rgba(0,0,0,.2);
+    z-index: 10;
+}
+figure {
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
+}
+.menu {
+    display: none;
+}
+#menu-icon{
+    width: 40px;
+    cursor: pointer;
+    margin-left: auto;
+}
+#profile-pic{
+    height: 50px;
+}
+#name {
+    font-family: 'Segoe UI';
+    text-decoration: none;
+    font-weight: bold;
+    color: #313131;
+    font-size: 1.5em;
+    padding-left: 7px;
+    justify-content: flex-end;
+    width: 126px;
+}
+h1{
+    color: #F1F1F1;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 3.5em;
+}
+#description {
+    display: block;
+    color: #CBCACA;
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+#guitar-section{
+    background: #CC3734;
+    padding: 10px 20px 10px 0px;
+    display: grid;
+    grid-template-columns: minmax(100px, 200px) minmax(60%, auto);
+    min-height: 400px;
+}
+h2 {
+    color:  #313131;
+    font-size: 2.4em;
+    margin: 20px 0px 10px 0px;
+}
+#guitar-div{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+#guitar {
+    width: 200%;
+    position: absolute;
+    top: 0;  
+    bottom: 0;  
+    left: -50%;  
+    right: 0;  
+    margin: auto;
+}
+p {
+    color: #F1F1F1;
+    font-size: 1.2em;
+}
+.horizontal-gallery-div {
+    height: 200px;
+    margin-top: 20px;
+    background-color: #707070;
+}
+#music-video-section h2 {
+    color: #F1F1F1;
+    font-size: 1.5em;
+    margin-left: 15px;
+}
+.photography h2 {
+    color: white;
+    text-align: center;
+    font-size: 3em; 
+}
+.camera {
+    width: 60%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.photography p {
+    text-align: center;
+    margin: 20px 30px;
+    color: white;
+}
+.darker {
+    font-weight: lighter;
+    color:  #F1F1F1;
+}
+.cinematography h2 {
+    background-color: #CC3734;
+    margin: 0;
+    text-align: center;
+    padding: 30px 0;
+}
+.cinema-camera {
+    width: 40%;
+    margin: 30px auto;
+    max-width: 200px
+}
+.cinematography p {
+    text-align: center;
+    margin: 15px 30px;
+}
+.background {
+    z-index: -10;
+}
+
+@media only screen and (min-width: 350px){
+    h1{
+        font-size: 4.5em;
+    }
+}
+@media only screen and (min-width: 650px) {
+    p {
+        font-size: 1.5em;
+    }
+    h1 {
+        font-size: 5.5em;
+    }
+    #menu-icon {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+        float: right;
+    }
+    .menu a {
+        display: block; 
+        text-decoration: none;
+        color: #313131;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    .menu a:hover {
+        color: #CC3734;
+        transform: scale(1.1);
+    }
+}
+@media only screen and (min-width: 900px) {
+    .menu a {
+        font-size: 1.3em;
+    }
+    .photography {
+        display: flex;
+    }
+    .photography h2 {
+        box-sizing: border-box;
+        text-align: left;
+        margin: 30px 20px;
+    }
+    .camera {
+        margin: 0;
+        background-color: #707070;
+        width: 73%;
+        padding: 40px;
+        height: 70%;
+    }
+    .photography p {
+        text-align: left;
+        margin-top: 40px;
+    }
+    .cinematography {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "title picture"
+                        "paragraph picture";
+    }
+    .cinema-camera {
+        box-sizing: border-box;
+        grid-area: picture;
+        height: 100%;
+        display: grid;
+        align-content: center;
+        margin: 0 auto;
+    }
+    .cinematography .background {
+        background-color: #CC3734;
+        grid-area: 1/1/3/2;
+    }
+    .cinematography h2 {
+        background: none;
+        grid-area: title;
+        font-size: 3em;
+        text-align: left;
+        margin-left: 30px;
+        
+    }
+    .cinematography .text {
+        grid-area: paragraph;
+    }
+    .cinematography p {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    h2 {
+        font-size: 3em;
+    }
+    #guitar-section {
+        background: none;
+        grid-template-columns: 260px minmax(60%, auto);
+        padding-right: 0;
+        padding: 0;
+    }
+    #guitar-text {
+        background: url("../graphics/skewed-div.svg") no-repeat;
+        background-size: cover;
+        padding: 50px 30px 50px 60px;
+    }
+    #guitar {
+        top: -170px;
+        left: -160px;
+        width: 230%;
+    }
+    .horizontal-gallery-div {
+        margin: 0;
+    }
+    #music-video-section {
+        position: relative;
+    }
+    #music-video-section h2 {
+        position: absolute; 
+        margin-left: 30px;
+        top: -60px;
+    }
+    
+}
+@media only screen and (min-width: 1400px) {
+    h1 {
+        font-size: 7em;
+        margin-top: 125px;
+    }
+    h2 {
+        font-size: 3.7em;
+    }
+    p {
+        font-size: 1.8em;
+    }
+    #guitar-section {
+        grid-template-columns: 330px minmax(60%, auto);
+    }
+    #guitar-text {
+        padding: 5em;
+    }
+    #guitar {
+        left: -200px;
+        top: -220px;
+    }
+    .photography h2 {
+        font-size: 4em;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 0;
+    }
+    .photography .text{
+        padding: 50px;
+    }
+}

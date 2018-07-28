@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.103 31.442">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #313131;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-333.5 -31.5)">
+    <line id="Line_1" data-name="Line 1" class="cls-1" x2="44.103" transform="translate(333.5 33.5)"/>
+    <line id="Line_2" data-name="Line 2" class="cls-1" x2="44.103" transform="translate(333.5 47.221)"/>
+    <line id="Line_3" data-name="Line 3" class="cls-1" x2="44.103" transform="translate(333.5 60.942)"/>
+  </g>
+</svg>

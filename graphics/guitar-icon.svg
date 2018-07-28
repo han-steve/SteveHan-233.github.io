@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.23 242.265">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cc3734;
+        stroke: #313131;
+        stroke-width: 3px;
+      }
+
+      .cls-2, .cls-7 {
+        fill: none;
+      }
+
+      .cls-2, .cls-4, .cls-5 {
+        stroke: #707070;
+      }
+
+      .cls-3, .cls-5 {
+        fill: #cbcaca;
+      }
+
+      .cls-4 {
+        fill: #707070;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_6" data-name="Group 6" transform="translate(-638.681 -858.313)">
+    <path id="Path_2" data-name="Path 2" class="cls-1" d="M756.163,933.8s-17.576-10.16-35.9,48.089c-43.687,24.383-65.022,46.4-20.658,83.649s60.958,3.386,60.958,3.386,4-3.725,12.5-43.01c24.756-17.272,33.561-23.368,29.158-34.882-11.21,7.789-34.916,25.738-29.158-9.144,16.967-23.706,66.353-89.959,66.353-89.959l12.625-5.087,26.528-40.078-8.632-2.775L829.226,876.2l-.909,9.249L767.3,963.6s-41.249,19.981-11.142-26.077C759.549,933.457,756.163,933.8,756.163,933.8Z" transform="translate(-35 16)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-2" d="M762.089,891.908" transform="translate(74.97 19.619)"/>
+    <path id="Path_5" data-name="Path 5" class="cls-3" d="M695.187,942.833s-1.079,8.471-19.625,25.8c-16.707,8.537-13.98,16.837-12.806,19.445,8.786,22.529,33.642,9.085,35.053,40.27,4.624,13.043,15.059-17.8,15.059-17.8s.993-15.869,6.921-21.442c5.81-5.81,33.121-17.972,29.92-22.49-7.34,2.976-33.28,25.31-50.846-25.552C697.107,938.674,695.187,942.833,695.187,942.833Z" transform="translate(11.742 49.375)"/>
+    <path id="Path_6" data-name="Path 6" class="cls-4" d="M663.109,1019.553l10.861,8.426L755.2,917.626l-8.64-5.708Z" transform="translate(47.754 -10.063)"/>
+    <g id="Rectangle_1" data-name="Rectangle 1" class="cls-5" transform="translate(703.838 1009.993) rotate(39)">
+      <rect class="cls-6" width="22.604" height="8.073" rx="3"/>
+      <rect class="cls-7" x="0.5" y="0.5" width="21.604" height="7.073" rx="2.5"/>
+    </g>
+    <g id="Rectangle_2" data-name="Rectangle 2" class="cls-5" transform="translate(692.536 1024.525) rotate(39)">
+      <rect class="cls-6" width="22.604" height="8.073" rx="3"/>
+      <rect class="cls-7" x="0.5" y="0.5" width="21.604" height="7.073" rx="2.5"/>
+    </g>
+    <g id="Rectangle_3" data-name="Rectangle 3" class="cls-4" transform="translate(679.381 1040.014) rotate(39)">
+      <rect class="cls-6" width="24.219" height="9.688" rx="1"/>
+      <rect class="cls-7" x="0.5" y="0.5" width="23.219" height="8.688" rx="0.5"/>
+    </g>
+  </g>
+</svg>
