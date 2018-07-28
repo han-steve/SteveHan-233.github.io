@@ -92,7 +92,6 @@ body::-webkit-scrollbar {
 }
 h1 {
     color: #CBCACA;
-    font-family: 'Segoe UI Light';
     font-size: 3em;
     font-weight: lighter;
     display: block;
