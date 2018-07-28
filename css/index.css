@@ -10,7 +10,6 @@ body::-webkit-scrollbar {
 h1 {
     color: #CBCACA;
     font-size: 3em;
-    font-family: "Open Sans";
     font-weight: 200;
     display: block;
     width: 17em;
@@ -60,7 +59,6 @@ nav {
     top: 170px;
     left: 28px;
     color: #CBCACA;
-    font-family: "Open Sans";
     font-size: 1.4em;
     display: none;
     width: 110px;
@@ -111,7 +109,6 @@ nav {
         top: 110px;
         left: -5px;
         color: #CBCACA;
-        font-family: "Open Sans";
         font-size: 1.2em;
         width: 110px;
         text-align: center;
