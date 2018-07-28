@@ -1,4 +1,3 @@
-/** By default, use the local font and then fallback to web font. **/
 
 body {
     background-color: #313131;
@@ -11,7 +10,8 @@ body::-webkit-scrollbar {
 h1 {
     color: #CBCACA;
     font-size: 3em;
-    font-weight: lighter;
+    font-family: "Open Sans";
+    font-weight: 200;
     display: block;
     width: 17em;
     margin: auto;
@@ -60,7 +60,6 @@ nav {
     top: 170px;
     left: 28px;
     color: #CBCACA;
-    font-family: "Segoe UI";
     font-size: 1.4em;
     display: none;
     width: 110px;
@@ -111,7 +110,6 @@ nav {
         top: 110px;
         left: -5px;
         color: #CBCACA;
-        font-family: "Segoe UI";
         font-size: 1.2em;
         width: 110px;
         text-align: center;
