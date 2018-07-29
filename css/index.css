@@ -35,9 +35,14 @@ nav {
     position: absolute;
     top: 60vh;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .icon-div {
     position: relative;
@@ -66,7 +71,8 @@ nav {
     
 }
 .icon-div:hover .icon{
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
 } 
 .icon-div:hover .caption {
     display: block;
