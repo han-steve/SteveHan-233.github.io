@@ -140,7 +140,7 @@ nav {
     }
     h1{
         width: 70%;
-        margin-top: 180px;
+        margin-top: 20vh;
         font-size: 2.7em;
     }
 }
@@ -172,5 +172,10 @@ nav {
 @media only screen and (max-width: 370px) {
     h1 {
         font-size: 1.5em;
+    }
+}
+@media only screen and (max-height: 550px) {
+    h1 {
+        font-size: 2em;
     }
 }
