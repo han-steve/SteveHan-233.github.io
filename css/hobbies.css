@@ -268,7 +268,7 @@ p {
     #guitar-text {
         background: url("../graphics/skewed-div.svg") no-repeat;
         background-size: cover;
-        padding: 50px 30px 50px 60px;
+        padding: 50px 40px 60px 70px;
     }
     #guitar {
         top: -170px;
@@ -287,6 +287,11 @@ p {
         top: -60px;
     }
     
+}
+@media only screen and (min-width: 1150px) {
+    #guitar-text {
+        padding-right: 80px;
+    }
 }
 @media only screen and (min-width: 1400px) {
     h1 {
