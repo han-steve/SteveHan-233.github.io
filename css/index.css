@@ -180,8 +180,8 @@ nav {
         font-size: 1.5em;
     }
 }
-@media only screen and (max-height: 430px) {
+@media only screen and (max-height: 420px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }
