@@ -177,10 +177,10 @@ nav {
 }
 @media only screen and (max-width: 370px) {
     h1 {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 }
-@media only screen and (max-height: 550px) {
+@media only screen and (max-height: 430px) {
     h1 {
         font-size: 2em;
     }
