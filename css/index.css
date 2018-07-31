@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
     display: none; 
 }
 h1 {
-    color: #CBCACA;
+    color: red;
     font-size: 3em;
     font-weight: 200;
     display: block;
