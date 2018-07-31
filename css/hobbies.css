@@ -86,7 +86,7 @@ h1{
 }
 h2 {
     color:  #313131;
-    font-size: 2.4em;
+    font-size: 2.6em;
     margin: 20px 0px 10px 0px;
 }
 #guitar-div{
@@ -120,9 +120,8 @@ p {
 .photography h2 {
     color: white;
     text-align: center;
-    font-size: 3em; 
 }
-.camera {
+.side-picture-div {
     width: 60%;
     max-width: 300px;
     margin: 20px auto;
@@ -159,6 +158,7 @@ p {
     h1{
         font-size: 4.5em;
     }
+    
 }
 @media only screen and (min-width: 650px) {
     p {
@@ -197,26 +197,36 @@ p {
         font-size: 1.3em;
     }
     .photography {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 135px auto;
+        grid-template-areas:"title paragraph"
+                            "photo paragraph";
     }
     .photography h2 {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        text-align: left;
+        grid-area: title;
         margin: 30px 20px;
+        text-align: right;
     }
-    .camera {
+    .side-picture-div {
+        grid-area: photo;
+        width: 100%;
         margin: 0;
         background-color: #707070;
-        width: 73%;
-        padding: 40px;
-        height: 70%;
+        padding: 70px;
+        box-sizing: border-box;
+        max-width: none;
+    }
+    .photograph .text {
+        grid-area: 1/2/3/3;
     }
     .photography p {
         text-align: left;
         margin-top: 40px;
+        font-size: 1.3em;
+    }
+    .horizontal-gallery-div {
+        margin: 0;
     }
     .cinematography {
         display: grid;
@@ -257,7 +267,7 @@ p {
 
 @media only screen and (min-width: 1000px) {
     h2 {
-        font-size: 3em;
+        font-size: 3.8em;
     }
     #guitar-section {
         background: none;
@@ -288,9 +298,20 @@ p {
     }
     
 }
-@media only screen and (min-width: 1150px) {
+@media only screen and (min-width: 1100px) {
+    .photography p {
+        font-size: 1.5em;
+    }
+    .photography {
+        grid-template-rows: 150px auto;
+    }  
+}
+@media only screen and (min-width: 1210px) {
     #guitar-text {
         padding-right: 80px;
+    }
+    .photography p {
+        font-size: 1.7em;
     }
 }
 @media only screen and (min-width: 1400px) {

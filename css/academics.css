@@ -1,0 +1,145 @@
+body {
+    background-color: #313131;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+}
+nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #CBCACA;
+    padding: 7px;
+    padding-right: 23px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,.2);
+            box-shadow: 0px 3px 15px rgba(0,0,0,.2);
+    z-index: 10;
+}
+figure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 10px 20px;
+}
+.menu {
+    display: none;
+}
+#menu-icon{
+    width: 40px;
+    cursor: pointer;
+    margin-left: auto;
+}
+#profile-pic{
+    height: 50px;
+}
+#name {
+    text-decoration: none;
+    font-weight: bold;
+    color: #313131;
+    font-size: 1.5em;
+    padding-left: 7px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 126px;
+}
+h1{
+    color: #F1F1F1;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 3.5em;
+}
+#description {
+    display: block;
+    color: #CBCACA;
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+
+
+@media only screen and (min-width: 350px){
+    h1{
+        font-size: 2em;
+    }
+}
+@media only screen and (min-width: 650px) {
+    p {
+        font-size: 1.5em;
+    }
+    h1 {
+        font-size: 5.5em;
+    }
+    #menu-icon {
+        display: none;
+    }
+    .menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 60%;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        float: right;
+    }
+    .menu a {
+        display: block; 
+        text-decoration: none;
+        color: #313131;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    .menu a:hover {
+        color: #CC3734;
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+}
+@media only screen and (min-width: 900px) {
+    .menu a {
+        font-size: 1.3em;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    h2 {
+        font-size: 3em;
+    }
+    
+    
+}
+@media only screen and (min-width: 1400px) {
+    h1 {
+        font-size: 7em;
+        margin-top: 125px;
+    }
+    h2 {
+        font-size: 3.7em;
+    }
+    p {
+        font-size: 1.8em;
+    }
+    
+}
