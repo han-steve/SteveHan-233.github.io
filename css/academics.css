@@ -72,9 +72,18 @@ h1{
     font-size: 15vw;
 }
 h2 {
+    color: white;
+    font-weight: 800;
+    font-size: 12vw;
+    text-align: center;
+    margin: 0;
+    padding-top: 2vh;
+}
+h3 {
     color:  #313131;
     font-size: 10vw;
     margin: 10px;
+    text-align: center;
 }
 p {
     color: #F1F1F1;
@@ -94,14 +103,13 @@ ul li{
     color: #F1F1F1;
     font-size: 5vw;
     font-weight: lighter;
-    text-align: right;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 }
 ul {
-    margin: 20px 0;
-    padding-left: 0;
-    padding-right: 6vw;
+    margin: 0;
+    padding: 0;
 }
+
 
 /** specifics **/
 #description {
@@ -109,23 +117,54 @@ ul {
     color: #CBCACA;
     text-align: center;
     margin-left: 9vw;
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
 }
 .grades-divs {
-    padding: 6vw 3vw;
+    padding: 6vw 7vw;
 }
-.grades-divs h2 {
+.grade-lists {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7vw;
+}
+.left-column {
+    text-align: left;
+}
+.right-column {
     text-align: right;
-    margin-right: 5vw;
 }
 #SAT ul li {
     color: #313131;
+    font-weight: normal;
+}
+#learning-title {
+    width: 80vw;
+    margin: 5vh auto;
+    padding: 3vw;
+}
+.italic {
+    display: block;
+    font-size: 3.7vw;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+    margin: 3vw 4vw 5vw 4vw;
+    line-height: 5.2vw;
+}
+#card-background {
+    position: relative;
+}
+#horizontal-bar {
+    height: 2vh;
+    width: 100vw;
+    position: absolute;
+    top: 49%;
+    z-index: -10;
 }
 
 
 /** Media Queries **/
-
 /** desktop menu **/
 @media only screen and (min-width: 650px) {
     p {
@@ -167,7 +206,7 @@ ul {
 }
 
 @media only screen and (min-width: 1000px) {
-    h2 {
+    h3 {
         font-size: 3em;
     }
     
@@ -178,7 +217,7 @@ ul {
         font-size: 7em;
         margin-top: 125px;
     }
-    h2 {
+    h3 {
         font-size: 3.7em;
     }
     p {
