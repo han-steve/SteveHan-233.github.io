@@ -1,9 +1,10 @@
 body {
     background-color: #313131;
-    margin: 0;
-    padding: 0;
     font-family: 'Open Sans';
+    box-sizing: border-box;
 }
+
+/* Navigation */
 nav {
     position: fixed;
     top: 0px;
@@ -22,7 +23,7 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     background-color: #CBCACA;
-    padding: 7px;
+    padding: 1px;
     padding-right: 23px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -61,29 +62,71 @@ figure {
             justify-content: flex-end;
     width: 126px;
 }
+
+/** General **/
 h1{
     color: #F1F1F1;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 0px;
-    font-size: 3.5em;
+    font-size: 15vw;
 }
+h2 {
+    color:  #313131;
+    font-size: 10vw;
+    margin: 10px;
+}
+p {
+    color: #F1F1F1;
+    font-size: 5vw;
+}
+.red {
+    background-color: #CC3734;
+}
+.dark-gray {
+    background-color: #707070;
+}
+.gray {
+    background-color: #CBCACA;
+}
+ul li{
+    list-style: none;
+    color: #F1F1F1;
+    font-size: 5vw;
+    font-weight: lighter;
+    text-align: right;
+    margin-bottom: 7px;
+}
+ul {
+    margin: 20px 0;
+    padding-left: 0;
+    padding-right: 6vw;
+}
+
+/** specifics **/
 #description {
     display: block;
     color: #CBCACA;
     text-align: center;
-    margin-left: 150px;
+    margin-left: 9vw;
     margin-top: 0;
     margin-bottom: 30px;
 }
-
-
-
-@media only screen and (min-width: 350px){
-    h1{
-        font-size: 2em;
-    }
+.grades-divs {
+    padding: 6vw 3vw;
 }
+.grades-divs h2 {
+    text-align: right;
+    margin-right: 5vw;
+}
+#SAT ul li {
+    color: #313131;
+}
+
+
+/** Media Queries **/
+
+/** desktop menu **/
 @media only screen and (min-width: 650px) {
     p {
         font-size: 1.5em;
