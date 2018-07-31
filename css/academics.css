@@ -186,9 +186,54 @@ ul {
 }
 
 /** Media Queries **/
-/** desktop menu **/
+@media only screen and (min-width: 480px) {
+
+    /** general **/
+    h1 {
+        font-size: 8vw;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    h3 {
+        font-size: 3.4vw;
+    }
+    p {
+        font-size: 2.2vw;
+    }
+    ul li {
+        font-size: 2vw;
+    }
+    
+    
+    /** specifics **/
+    #grades-section {
+        display: flex;
+        width: 100%;
+    }
+    .grades-divs {
+        padding: 3vw 2vw;
+    }
+    .grade-lists {
+        margin-top: 3.5vw;
+    }
+    #grades {
+        flex-grow: 1;
+    }
+    #ap-scores {
+        flex-grow: 2;
+    }
+    #ap-scores li {
+        font-size: 1.5vw;
+        margin-bottom: 6px;
+    }
+    #SAT h3 {
+        font-size: 2.8vw;
+    }
+}
 @media only screen and (min-width: 650px) {
     
+    /** desktop menu **/
     #menu-icon {
         display: none;
     }
@@ -213,6 +258,7 @@ ul {
         -webkit-transform: scale(1.1);
                 transform: scale(1.1);
     }
+
 }
 @media only screen and (min-width: 900px) {
     .menu a {
@@ -222,22 +268,9 @@ ul {
 }
 
 @media only screen and (min-width: 1000px) {
-    h3 {
-        font-size: 3em;
-    }
     
     
 }
 @media only screen and (min-width: 1400px) {
-    h1 {
-        font-size: 7em;
-        margin-top: 125px;
-    }
-    h3 {
-        font-size: 3.7em;
-    }
-    p {
-        font-size: 1.8em;
-    }
     
 }
