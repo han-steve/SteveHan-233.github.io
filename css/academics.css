@@ -162,7 +162,24 @@ ul {
     top: 49%;
     z-index: -10;
 }
-
+.learning-divs {
+    padding: 4vh 7vw;
+}
+.learning-divs p {
+    text-align: center;
+}
+.learning-divs h3 {
+    font-weight: 800
+}
+.icon {
+    width: 20vw;
+    display: block;
+    margin: auto;
+}
+#language-learning p{
+    color: #313131;
+    font-weight: 600;
+}
 
 /** Media Queries **/
 /** desktop menu **/
