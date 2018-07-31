@@ -1,7 +1,8 @@
 body {
     background-color: #313131;
     font-family: 'Open Sans';
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Navigation */
@@ -124,8 +125,11 @@ ul {
     padding: 6vw 7vw;
 }
 .grade-lists {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin-top: 7vw;
 }
 .left-column {
@@ -184,12 +188,7 @@ ul {
 /** Media Queries **/
 /** desktop menu **/
 @media only screen and (min-width: 650px) {
-    p {
-        font-size: 1.5em;
-    }
-    h1 {
-        font-size: 5.5em;
-    }
+    
     #menu-icon {
         display: none;
     }
