@@ -28,6 +28,17 @@
     height: 200px;
     margin-top: 1.2em;
     background-color: #707070;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+.horizontal-gallery-div::-webkit-scrollbar {
+    display: none;
+}
+iframe {
+    margin-left: 20px;
+    height: 170px;
+    border: none;
 }
 #music-video-section h4 {
     color: #F1F1F1;
@@ -80,13 +91,10 @@
         font-size: 20vw;
     }
 }
-@media only screen and (min-width: 350px){
-    .cinematography h2 {
-        font-size: 2.6em;
-    }
-}
-
 @media only screen and (min-width: 700px) {
+    .cinematography h3 {
+        color: #313131;
+    }
     .photography {
         display: grid;
         grid-template-columns: 2fr 5fr;
@@ -235,7 +243,7 @@
     }
     #guitar {
         top: -220px;
-        left: -100px;
+        left: -150px;
         width: 160%;
     }
 }
