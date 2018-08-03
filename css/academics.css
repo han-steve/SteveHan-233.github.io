@@ -1,4 +1,6 @@
-
+h3 {
+    font-size: 2.5em;
+}
 /** General **/
 .red {
     background-color: #CC3734;
@@ -46,16 +48,16 @@ ul {
 #learning-title {
     width: 80vw;
     margin: 5vh auto;
-    padding: 3vw;
+    padding: .6em;
 }
 .italic {
     display: block;
-    font-size: 3.7vw;
+    font-size: 1em;
     font-weight: lighter;
     font-style: italic;
     text-align: center;
-    margin: 3vw 4vw 5vw 4vw;
-    line-height: 5.2vw;
+    margin: 1em 1.2em 1.3em 1.2em;
+    line-height: 1.4em;
 }
 #card-background {
     position: relative;
@@ -87,20 +89,17 @@ ul {
 }
 
 /** Media Queries **/
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 560px) {
 
     /** general **/
-    h1 {
-        font-size: 8vw;
-    }
-    h2 {
-        font-size: 6vw;
-    }
-    h3 {
+    #grades-section h3 {
+        text-align: center;
         font-size: 3.4vw;
-    }
-    p {
-        font-size: 2.2vw;
     }
     ul li {
         font-size: 2vw;
@@ -131,47 +130,46 @@ ul {
     #SAT h3 {
         font-size: 2.8vw;
     }
-}
-@media only screen and (min-width: 650px) {
-    
-    /** desktop menu **/
-    #menu-icon {
-        display: none;
+    #learning-title {
+        width: 60vw;
+        max-width: 28em;
+        margin: 5vh auto;
+        padding: 3vw;
     }
-    .menu {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: 60%;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-        float: right;
+    h2 {
+        font-size: 4em;
+        padding: 0;
     }
-    .menu a {
-        display: block; 
-        text-decoration: none;
-        color: #313131;
-        font-size: 1em;
-        text-transform: uppercase;
+    p {
+        line-height: 1.4em;
     }
-    .menu a:hover {
-        color: #CC3734;
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-
-}
-@media only screen and (min-width: 900px) {
-    .menu a {
-        font-size: 1.3em;
-    }
-    
 }
 
-@media only screen and (min-width: 1000px) {
-    
-    
+@media only screen and (min-width: 675px) {
+    .learning-divs {
+        display: grid;
+        grid-template-rows: 4em auto;
+        grid-template-columns: 5em auto;
+        grid-column-gap: 1em;
+    }
+    .icon {
+        width: 100%;
+    }
+    h3 {
+        text-align: left;
+        margin: 0;
+        align-self: center;
+    }
+    .text {
+        grid-area: 2/2/3/3;
+    }
+    .learning-divs p {
+        text-align: left;
+    }
 }
-@media only screen and (min-width: 1400px) {
-    
+@media only screen and (min-width: 1500px) {
+    .learning-divs {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
 }
