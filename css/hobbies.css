@@ -32,9 +32,6 @@
     align-items: center;
     overflow-x: auto;
 }
-.horizontal-gallery-div::-webkit-scrollbar {
-    display: none;
-}
 iframe {
     margin-left: 20px;
     height: 170px;
