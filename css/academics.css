@@ -1,95 +1,5 @@
-body {
-    background-color: #313131;
-    font-family: 'Open Sans';
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #CBCACA;
-    padding: 1px;
-    padding-right: 23px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,.2);
-            box-shadow: 0px 3px 15px rgba(0,0,0,.2);
-    z-index: 10;
-}
-figure {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 10px 20px;
-}
-.menu {
-    display: none;
-}
-#menu-icon{
-    width: 40px;
-    cursor: pointer;
-    margin-left: auto;
-}
-#profile-pic{
-    height: 50px;
-}
-#name {
-    text-decoration: none;
-    font-weight: bold;
-    color: #313131;
-    font-size: 1.5em;
-    padding-left: 7px;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    width: 126px;
-}
 
 /** General **/
-h1{
-    color: #F1F1F1;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 0px;
-    font-size: 15vw;
-}
-h2 {
-    color: white;
-    font-weight: 800;
-    font-size: 12vw;
-    text-align: center;
-    margin: 0;
-    padding-top: 2vh;
-}
-h3 {
-    color:  #313131;
-    font-size: 10vw;
-    margin: 10px;
-    text-align: center;
-}
-p {
-    color: #F1F1F1;
-    font-size: 5vw;
-}
 .red {
     background-color: #CC3734;
 }
@@ -111,16 +21,7 @@ ul {
     padding: 0;
 }
 
-
 /** specifics **/
-#description {
-    display: block;
-    color: #CBCACA;
-    text-align: center;
-    margin-left: 9vw;
-    margin-top: 1vh;
-    margin-bottom: 5vh;
-}
 .grades-divs {
     padding: 6vw 7vw;
 }

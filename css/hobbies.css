@@ -1,82 +1,4 @@
 
-body {
-    background-color: #313131;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans';
-}
-nav {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #CBCACA;
-    padding: 1px;
-    padding-right: 23px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,.2);
-            box-shadow: 0px 3px 15px rgba(0,0,0,.2);
-    z-index: 10;
-}
-figure {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 10px 20px;
-}
-.menu {
-    display: none;
-}
-#menu-icon{
-    width: 40px;
-    cursor: pointer;
-    margin-left: auto;
-}
-#profile-pic{
-    height: 50px;
-}
-#name {
-    text-decoration: none;
-    font-weight: bold;
-    color: #313131;
-    font-size: 1.5em;
-    padding-left: 7px;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    width: 126px;
-}
-h1{
-    color: #F1F1F1;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 0px;
-    font-size: 3.5em;
-}
-#description {
-    display: block;
-    color: #CBCACA;
-    text-align: center;
-    margin-left: 80px;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
 #guitar-section{
     background: #CC3734;
     padding: 10px 20px 10px 0px;
@@ -84,10 +6,9 @@ h1{
     grid-template-columns: minmax(100px, 200px) minmax(60%, auto);
     min-height: 400px;
 }
-h2 {
-    color:  #313131;
-    font-size: 2.6em;
-    margin: 20px 0px 10px 0px;
+#guitar-section h3 {
+    text-align: left;
+    color: #313131;
 }
 #guitar-div{
     display: inline-block;
@@ -103,42 +24,38 @@ h2 {
     right: 0;  
     margin: auto;
 }
-p {
-    color: #F1F1F1;
-    font-size: 1.2em;
-}
 .horizontal-gallery-div {
     height: 200px;
-    margin-top: 20px;
+    margin-top: 1.2em;
     background-color: #707070;
 }
-#music-video-section h2 {
+#music-video-section h4 {
     color: #F1F1F1;
-    font-size: 1.5em;
-    margin-left: 15px;
+    font-size: 25px;
+    margin: .7em 0 0 1em;
 }
-.photography h2 {
+.photography h3 {
     color: white;
-    text-align: center;
 }
-.side-picture-div {
+.photography .side-picture-div {
     width: 60%;
     max-width: 300px;
     margin: 20px auto;
 }
+.photography {
+    padding: .5em;
+}
 .photography p {
     text-align: center;
-    margin: 20px 30px;
-    color: white;
+    margin: .8em 1.4em;
 }
-.darker {
+.lighter {
     font-weight: lighter;
-    color:  #F1F1F1;
 }
-.cinematography h2 {
+.cinematography h3 {
     background-color: #CC3734;
+    color: white;
     margin: 0;
-    text-align: center;
     padding: 30px 0;
     font-size: 2.3em;
 }
@@ -149,87 +66,60 @@ p {
 }
 .cinematography p {
     text-align: center;
-    margin: 15px 30px;
+    margin: 1em 2em;
+}
+.cinematography .text {
+    background-color: #CC3734;
+    padding: .2em;
 }
 .background {
     z-index: -10;
 }
 
 @media only screen and (min-width: 350px){
-    h1{
-        font-size: 4.5em;
-    }
     .cinematography h2 {
         font-size: 2.6em;
     }
 }
-@media only screen and (min-width: 650px) {
-    p {
-        font-size: 1.5em;
-    }
-    h1 {
-        font-size: 5.5em;
-    }
-    #menu-icon {
-        display: none;
-    }
-    .menu {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: 60%;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-        float: right;
-    }
-    .menu a {
-        display: block; 
-        text-decoration: none;
-        color: #313131;
-        font-size: 1em;
-        text-transform: uppercase;
-    }
-    .menu a:hover {
-        color: #CC3734;
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-}
-@media only screen and (min-width: 900px) {
-    .menu a {
-        font-size: 1.3em;
-    }
+
+@media only screen and (min-width: 700px) {
     .photography {
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 135px auto;
+        grid-template-columns: 2fr 5fr;
+        grid-template-rows: 9em auto;
         grid-template-areas:"title paragraph"
                             "photo paragraph";
     }
-    .photography h2 {
+    .photography h3 {
         grid-area: title;
-        margin: 30px 20px;
         text-align: right;
+        margin: 1em 0em 1em .2em;
     }
-    .side-picture-div {
+    .photography {
+        padding: 0;
+    }
+    #photos-gallery {
+        margin: 0;
+    }
+    .photography .side-picture-div {
         grid-area: photo;
         width: 100%;
         margin: 0;
         background-color: #707070;
-        padding: 70px;
         box-sizing: border-box;
         max-width: none;
     }
-    .photograph .text {
-        grid-area: 1/2/3/3;
+    #camera-icon {
+        width: 60%;
+        display: block;
+        margin: 3em auto;
+    }
+    .photography .text {
+        grid-area: paragraph;
     }
     .photography p {
         text-align: left;
-        margin-top: 40px;
-        font-size: 1.3em;
-    }
-    .horizontal-gallery-div {
-        margin: 0;
+        margin-top: 1.4em;
     }
     .cinematography {
         display: grid;
@@ -252,26 +142,31 @@ p {
         background-color: #CC3734;
         grid-area: 1/1/3/2;
     }
-    .cinematography h2 {
+    .cinematography h3 {
         background: none;
         grid-area: title;
-        font-size: 3em;
         text-align: left;
-        margin-left: 30px;
-        
+        margin-left: 1em;
+        font-size: 2.6em;
     }
     .cinematography .text {
         grid-area: paragraph;
     }
     .cinematography p {
         text-align: left;
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .photography h3 {
+        margin: .5em 0 .5em .3em;
+    }
+    .photography {
+        grid-template-rows: 7em auto;
     }
 }
 
 @media only screen and (min-width: 1000px) {
-    h2 {
-        font-size: 3.8em;
-    }
     #guitar-section {
         background: none;
         grid-template-columns: 260px minmax(60%, auto);
@@ -288,63 +183,55 @@ p {
         left: -160px;
         width: 230%;
     }
+    #camera-icon {
+        margin-top: 1em;
+    }
     .horizontal-gallery-div {
         margin: 0;
     }
     #music-video-section {
         position: relative;
     }
-    #music-video-section h2 {
+    #music-video-section h4 {
         position: absolute; 
         margin-left: 30px;
         top: -60px;
     }
     
 }
-@media only screen and (min-width: 1100px) {
-    .photography p {
-        font-size: 1.5em;
-    }
-    .photography {
-        grid-template-rows: 150px auto;
-    }  
-}
 @media only screen and (min-width: 1210px) {
     #guitar-text {
-        padding-right: 80px;
+        padding-right: 4em;
     }
-    .photography p {
-        font-size: 1.7em;
-    }
+    
 }
 @media only screen and (min-width: 1400px) {
-    h1 {
-        font-size: 7em;
-        margin-top: 125px;
-    }
-    h2 {
-        font-size: 3.7em;
-    }
-    p {
-        font-size: 1.8em;
+    
+    .photography .text{
+        padding: 0 2em;
     }
     #guitar-section {
-        grid-template-columns: 330px minmax(60%, auto);
-    }
-    #guitar-text {
-        padding: 5em;
+        background: none;
+        grid-template-columns: 300px minmax(60%, auto);
+        padding-right: 0;
+        padding: 0;
     }
     #guitar {
-        left: -200px;
         top: -220px;
+        left: -190px;
+        width: 230%;
     }
-    .photography h2 {
-        font-size: 4em;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-right: 0;
+}
+@media only screen and (min-width: 1700px) {
+    #guitar-section {
+        background: none;
+        grid-template-columns: 500px minmax(60%, auto);
+        padding-right: 0;
+        padding: 0;
     }
-    .photography .text{
-        padding: 50px;
+    #guitar {
+        top: -220px;
+        left: -100px;
+        width: 160%;
     }
 }
