@@ -234,6 +234,10 @@ p {
     margin-top: 0;
     margin-bottom: 2em;
 }
+#profile-link {
+    display: block;
+    text-decoration: none;
+}
 
 /*** Media Queries ***/
 @media only screen and (min-height: 640px) {
