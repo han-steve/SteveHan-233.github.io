@@ -1,6 +1,9 @@
 h3 {
     font-size: 2.5em;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 /** General **/
 .red {
     background-color: #CC3734;
