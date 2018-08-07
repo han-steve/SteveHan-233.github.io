@@ -183,7 +183,6 @@ figure {
     left: 20px;
 }
 .active {
-    
     display: flex !important;
     flex-wrap: wrap;
     flex-direction: column;
