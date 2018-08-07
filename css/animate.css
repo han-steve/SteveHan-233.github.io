@@ -10,6 +10,22 @@
     animation-iteration-count: infinite;
   }
   
+  .animated.delay-200ms {
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+  }
+  .animated.delay-400ms {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+  }
+  .animated.delay-600ms {
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+  }
+  .animated.delay-800ms {
+    -webkit-animation-delay: .8s;
+    animation-delay: .8s;
+  }
   .animated.delay-1s {
     -webkit-animation-delay: 1s;
     animation-delay: 1s;

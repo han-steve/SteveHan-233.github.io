@@ -50,9 +50,74 @@ figure {
 }
 #menu-icon{
     width: 40px;
+    height: 30px;
     cursor: pointer;
     margin-left: auto;
+    z-index: 10;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
+  
+  #menu-icon span{
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #313131;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  #menu-icon span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #menu-icon span:nth-child(2) {
+    top: 13px;
+  }
+  
+  #menu-icon span:nth-child(3) {
+    top: 26px;
+  }
+  
+  #menu-icon.open span:nth-child(1) {
+    top: 18px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  
+  #menu-icon.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  
+  #menu-icon.open span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  #menu-icon.open span{
+      background-color: #CBCACA;
+  }
 #profile-pic{
     height: 50px;
 }
@@ -66,6 +131,71 @@ figure {
         -ms-flex-pack: end;
             justify-content: flex-end;
     width: 126px;
+}
+/**mobile**/
+#mobile-menu {
+    display: none;
+}
+.icon-div {
+    position: relative;
+    width: 100px;
+    margin: 0 15px;
+    z-index: 1;
+    height: 140px;
+}
+.circle {
+    position: absolute;
+    width: 100%;
+}
+.icon {
+    width: 100%;
+    position: relative;
+}
+.caption{
+    position: absolute;
+    top: 100px;
+    left: -5px;
+    color: #CBCACA;
+    font-size: 1.2em;
+    width: 110px;
+    text-align: center;
+    display: block;
+    
+}
+#guitar-icon{
+    width: 105%;
+    top: -34px;
+    left: 13px;
+} 
+#book-icon{
+    width: 67%;
+    top: 25px;
+   left: 17px;
+}
+#coding-icon{
+    width: 63%;
+    top: 25px;
+    left: 18px;
+}
+#experience-icon {
+    width: 60%;
+    top: 20px;
+    left: 20px;
+}
+.active {
+    
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
 }
 
 /** General **/
@@ -107,6 +237,11 @@ p {
 }
 
 /*** Media Queries ***/
+@media only screen and (min-height: 640px) {
+    .icon-div {
+        height: 150px;
+    }
+}
 @media only screen and (min-width: 450px){
     h1{
         font-size: 4.8em;
@@ -143,6 +278,7 @@ p {
         color: #CC3734;
         -webkit-transform: scale(1.1);
                 transform: scale(1.1);
+        transition: 1s;
     }
 }
 @media only screen and (min-width: 900px) {

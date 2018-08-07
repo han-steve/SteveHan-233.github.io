@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/hobbies.css">
+    <link rel="stylesheet" href="css/animate.css">
     <title>Hobbies</title>
 </head>
 
@@ -24,7 +25,33 @@
             <a href="#">Projects</a>
             <a href="#">Experience</a>
         </div>
-        <img id="menu-icon" src="graphics/menu-icon.svg">
+        <div id="mobile-menu">
+            <div class="icon-div animated fadeInUp">
+                <img class="circle" src="graphics/redCircle.svg">
+                <a href="academics.html"><img class="icon" id="book-icon" src="graphics/book-icon.svg"></a>
+                <figcaption class="caption">Academics</figcaption>
+            </div>
+            <div class="icon-div animated delay-200ms fadeInUp">
+                <img class="circle" src="graphics/redCircle.svg">
+                <a href="hobbies.html"><img class="icon" id="guitar-icon" src="graphics/guitar-icon.svg"></a>
+                <figcaption class="caption">Hobbies</figcaption>
+            </div>
+            <div class="icon-div animated delay-400ms fadeInUp" >
+                <img class="circle" src="graphics/redCircle.svg">
+                <img class="icon" id="coding-icon" src="graphics/coding-icon.svg">
+                <figcaption class="caption">Projects</figcaption>
+            </div>
+            <div class="icon-div animated delay-600ms fadeInUp">
+                <img class="circle" src="graphics/redCircle.svg">
+                <img class="icon" id="experience-icon" src="graphics/experience-icon.svg">
+                <figcaption class="caption">Experience</figcaption>
+            </div>
+        </div>
+        <div id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
     </nav>
     <h1>HOBBIES</h1>
     <p id="description">
@@ -93,6 +120,20 @@
         <iframe allowfullscreen src="https://youtube.com/embed/GhhQP0_KF7w?rel=0&amp;showinfo=0&autohide=1"></iframe>
         <iframe allowfullscreen src="https://youtube.com/embed/ML2SIx2Zz78?rel=0&amp;showinfo=0&autohide=1"></iframe>
     </div>
+
+    <script>
+        (function () {
+            var menu = document.getElementById("mobile-menu"),
+                menuIcon = document.getElementById("menu-icon");
+
+            menuIcon.addEventListener('click', function (e) {
+                menu.classList.toggle("active");
+                menuIcon.classList.toggle("open");
+                e.preventDefault();
+            });
+
+        })();
+    </script>
 </body>
 
 </html>
