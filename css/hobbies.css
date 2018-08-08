@@ -33,6 +33,10 @@
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
+.horizontal-gallery-div figure {
+    margin: 0;
+    margin-left: 20px;
+}
 iframe {
     margin-left: 20px;
     height: 170px;

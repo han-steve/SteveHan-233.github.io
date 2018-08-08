@@ -36,7 +36,7 @@ nav {
             box-shadow: 0px 3px 15px rgba(0,0,0,.2);
     z-index: 10;
 }
-figure {
+nav figure {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
