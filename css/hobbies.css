@@ -33,6 +33,10 @@
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
+#cinematography-gallery {
+    margin: 0;
+    background-color: #CC3734;
+}
 .horizontal-gallery-div figure {
     margin: 0;
     margin-left: 20px;
