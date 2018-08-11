@@ -97,6 +97,7 @@ ul {
     display: flex;
     align-items: center;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .book-covers {
     height: 160px;
