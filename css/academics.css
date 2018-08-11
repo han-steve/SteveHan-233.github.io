@@ -91,6 +91,53 @@ ul {
     font-weight: 600;
 }
 
+/** Accordian **/
+.gallery {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+.book-covers {
+    height: 160px;
+    border: 10px #707070 solid;
+    margin-right: 30px;
+    transition: .25s;
+}
+.details {
+    box-sizing: border-box;
+    background-color: #313131;
+    width: 100%;
+    padding: 0 1em;
+    overflow: hidden;
+    max-height: 0;
+    transition: .4s;
+}
+.details p {
+    text-align: left;
+    font-size: 1em;
+}
+.author {
+    display: block;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: .3em;
+    color: #CBCACA;
+}
+.details h4 {
+    color: #F1F1F1;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0;
+    margin-top: .7em;
+    font-size: 2em;
+}
+.selected {
+    border: 20px #313131 solid;
+}
+
+
 /** Media Queries **/
 @media only screen and (max-width: 360px) {
     html {
@@ -152,8 +199,17 @@ ul {
     .learning-divs {
         display: grid;
         grid-template-rows: 4em auto;
-        grid-template-columns: 5em auto;
+        grid-template-columns: 5em calc(86vw - 5em);
         grid-column-gap: 1em;
+    }
+    .details {
+        padding: 0 3em;
+    }
+    .details h4 {
+        margin-top: 1.2em;
+    }
+    .details p {
+        margin-bottom: 3em;
     }
     .academics-icon {
         width: 100%;
@@ -168,6 +224,12 @@ ul {
     }
     .learning-divs p {
         text-align: left;
+    }
+    #reading {
+        grid-template-rows: 4em auto auto;
+    }
+    .accordian {
+        grid-area: 3/2/4/3;
     }
 }
 @media only screen and (min-width: 1500px) {
