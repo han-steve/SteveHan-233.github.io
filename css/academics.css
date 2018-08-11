@@ -1,8 +1,8 @@
 h3 {
     font-size: 2.5em;
 }
-body::-webkit-scrollbar {
-    display: none;
+body {
+    overflow-x: hidden;
 }
 /** General **/
 .red {
