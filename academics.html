@@ -140,9 +140,9 @@
             <img class="academics-icon" src="graphics/book-icon.svg">
             <h3>READING</h3>
             <div class="text">
-                <p>I love reading classics, which have brought me not only joy but also the reading comprehension skills that
+                <p class="paragraph">I love reading classics, which have brought me not only joy but also the reading comprehension skills that
                     enabled me to succeed academically. </p>
-                <p>Here are some of my favorite books and my reviews for them: </p>
+                <p class="paragraph">Here are some of my favorite books and my reviews for them: </p>
             </div>
             <div class="accordian">
                 <div class="gallery">
@@ -226,13 +226,12 @@
                 <div class="details">
                     <h4>Great Expectations</h4>
                     <span class="author">by Charles Dickens</span>
-                    <p> Never have I met characters so lively and memorable, as those sculpted by Dickens in this novel.
-                        When I was first introduced to the ghastly house occupied by the eccentric Miss Havisham, for a second
+                    <p> Never have I met characters so lively and memorable, as those sculpted by Dickens in this novel. When
+                        I was first introduced to the ghastly house occupied by the eccentric Miss Havisham, for a second
                         I thought I was in a science fiction novel; but I couldn't be more wrong, as the characters developed
                         so completely and the story was concluded so beautifully, that it completely surpassed my already
-                        great expectations for this book. 
-                        <br>Thank you, Dickens, for again reminding me of the power that a
-                        novel can truly possess. </p>
+                        great expectations for this book.
+                        <br>Thank you, Dickens, for again reminding me of the power that a novel can truly possess. </p>
                 </div>
             </div>
         </div>
@@ -240,24 +239,69 @@
             <img class="academics-icon" src="graphics/coding-icon.svg">
             <h3>PROGRAMMING</h3>
             <div class="text">
-                <p>Although I am rather a late bloomer in this field (having only developed an affinity for programming in my
-                    junior year), I have avidly perused many programming books and taught myself to build websites like this
-                    one. </p>
-                <p>At the moment, I’m learning frontend development and practicing solving problems using Java. </p>
+                <p class="paragraph">Although I have only developed an affinity for programming in my junior year, I have avidly perused many
+                    programming books and taught myself to build websites like this one. </p>
+                <p class="paragraph">At the moment, I’m learning frontend development and practicing solving problems using Java. </p>
+                <div class="expand-trigger">what I've done</div>
+                <div class="expand-div">
+                    <a target="_blank" style="text-decoration:none" href="https://www.freecodecamp.org/certification/stevehan/responsive-web-design">
+                        <div class="expand-cards">
+                            <img class="card-icon" src="img/freecodecamp.jpg">
+                            <div>
+                                <p>
+                                    <em>FreeCodeCamp</em>’s web design certification (300 hours)</p>
+                                <small>(click to view)</small>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="expand-cards">
+                        <img class="card-icon" src="img/bigjava.jpg">
+                        <div>
+                            <p>Read textbook "<em>Big Java: Early Objects</em>" twice</p>
+                            <small>(1072 pages)</small>
+                        </div>
+                    </div>
+                    <div class="expand-cards">
+                        <img class="card-icon" src="img/hackerrank.png">
+                        <div>
+                            <p>Completed
+                                55 challenges on 
+                                <em>HackerRank</em>.</p>
+                        </div>
+                    </div>
+                    <div class="expand-cards">
+                        <img class="card-icon" src="img/ydkjs.jpg">
+                        <div>
+                            <p>Read 3 books in the series
+                                <em>You Don't Know JavaScript</em>.</p>
+                        </div>
+                    </div>
+                    <div class="expand-cards">
+                        <img class="card-icon" src="img/codecademy.png">
+                        <div>
+                            <p>Completed
+                                <em>HTML</em> and
+                                <em>Introduction to JavaScript</em> courses on
+                                <em>codecademy</em>.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="learning-divs gray" id="language-learning">
             <img class="academics-icon" src="graphics/spanish-icon.png">
             <h3>LANGUAGE LEARNING</h3>
             <div class="text">
-                <p>After moving to America from China 4 years ago, I have not only worked hard to become fluent in English,
+                <p class="paragraph">After moving to America from China 4 years ago, I have not only worked hard to become fluent in English,
                     but I also started my journey of mastering Spanish. </p>
-                <p>For me, a language is a pathway to a culture, a vessel that can carry me to other parts of this diverse world.</p>
+                <p class="paragraph">A language is a pathway to a culture, a vessel that can carry me to other parts of this diverse world. By
+                    adding another language into my lexicon, I can open up a world of opportunities for my future. </p>
             </div>
         </div>
     </section>
 
-    <script src="javascript/accordian.js"></script>
+    <script src="javascript/books.js"></script>
+    <script src="javascript/expand.js"></script>
     <script>
         (function () {
             var menu = document.getElementById("mobile-menu"),

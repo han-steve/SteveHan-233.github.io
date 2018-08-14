@@ -84,7 +84,7 @@ ul {
 .academics-icon {
     width: 20vw;
     display: block;
-    margin: auto;
+    align-self: center;
 }
 #language-learning p{
     color: #313131;
@@ -104,6 +104,7 @@ ul {
     border: 10px #707070 solid;
     margin-right: 30px;
     transition: .25s;
+    cursor: pointer;
 }
 .details {
     box-sizing: border-box;
@@ -138,7 +139,59 @@ ul {
     border: 20px #313131 solid;
 }
 
-
+/** Expand **/
+.expand-trigger {
+    color: #313131;
+    text-align: center;
+    margin: 1em auto;
+    cursor: pointer;
+    background-color: #F1F1F1;
+    font-weight: bold;
+    width: 10em;
+    padding: .5em 1em;
+    border-radius: 15px;
+}
+.expand-trigger::before{
+    content: "+ ";
+}
+.expand-trigger.triggered::before{
+    content: "- ";
+}
+.expand-div {
+    display: flex;
+    flex-direction: column; 
+    max-height: 0px;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+}
+.expand-cards {
+    display: grid;
+    grid-template-columns: 5em auto;
+    align-items: center;
+    background-color: #CBCACA;
+    border-radius: 8px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    margin-bottom: 1.5em;
+}
+.card-icon {
+    width: 100%;
+}
+.expand-cards p {
+    font-size: 1.1em;
+    margin: 0;
+    color: #313131;
+    font-weight: 600;
+}
+.expand-cards em {
+    font-weight: 700;
+    font-style: normal;
+}
+.expand-cards small {
+    color: #313131;
+    display: block;
+    text-align: center;
+}
 /** Media Queries **/
 @media only screen and (max-width: 360px) {
     html {
@@ -232,10 +285,34 @@ ul {
     .accordian {
         grid-area: 3/2/4/3;
     }
+    .expand-trigger {
+        margin-left: 0;
+    }
+    .expand-div {
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, 24em);
+        grid-column-gap: 1em;
+    }
+    .expand-cards {
+        grid-column-gap: 1em;
+    }
 }
 @media only screen and (min-width: 1500px) {
     .learning-divs {
         padding-left: 20vw;
         padding-right: 20vw;
+        grid-template-columns: 5em calc(70vw - 5em);
+    }
+    .paragraph {
+        padding-right: 10vw;
+    }
+    .expand-div {
+        grid-template-columns: repeat(auto-fit, 18em);
+    }
+    .expand-cards p {
+        font-size: .9em;
+    }
+    .expand-cards {
+        grid-template-columns: 4em auto;
     }
 }

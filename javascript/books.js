@@ -12,6 +12,7 @@ for (let i = 0; i < books.length; i++) {
 }
 
 function toggleShow(book, detail){
+    console.log("toggling " + detail);
     if (detail.style.maxHeight) {
         detail.style.maxHeight = null;
     } else {
