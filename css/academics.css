@@ -84,7 +84,7 @@ ul {
 .academics-icon {
     width: 20vw;
     display: block;
-    align-self: center;
+    margin: auto;
 }
 #language-learning p{
     color: #313131;
@@ -267,6 +267,8 @@ ul {
     }
     .academics-icon {
         width: 100%;
+        align-self: center;
+        margin: 0;
     }
     h3 {
         text-align: left;
