@@ -92,6 +92,21 @@
             <div class="number">143</div>
         </section>
     </section>
+
+    <script>
+        (function () {
+            var menu = document.getElementById("mobile-menu"),
+                menuIcon = document.getElementById("menu-icon");
+
+            menuIcon.addEventListener('click', function (e) {
+                menu.classList.toggle("active");
+                menuIcon.classList.toggle("open");
+                e.preventDefault();
+            });
+
+        })();
+    </script>
+
 </body>
 
 </html>
