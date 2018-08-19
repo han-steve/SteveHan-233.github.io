@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/academics.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Academics</title>
 </head>
 
@@ -63,13 +64,13 @@
             <span></span>
         </div>
     </nav>
-    <h1>ACADEMICS</h1>
-    <p id="description">
+    <h1 class="animated fadeInUp" >ACADEMICS</h1>
+    <p class="animated fadeInRightBig" id="description">
         <em>- nourishments for my curiosity</em>
     </p>
 
     <section id="grades-section">
-        <div class="red grades-divs" id="grades">
+        <div class="red grades-divs animated fadeInRightBig delay-400ms" id="grades">
             <h3>Grades</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -86,7 +87,7 @@
                 </ul>
             </div>
         </div>
-        <div class="dark-gray grades-divs" id="ap-scores">
+        <div class="dark-gray grades-divs animated fadeInRightBig delay-200ms" id="ap-scores">
             <h3>AP-Scores</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -113,7 +114,7 @@
                 </ul>
             </div>
         </div>
-        <div class="gray grades-divs" id="SAT">
+        <div class="gray grades-divs animated fadeInRightBig" id="SAT">
             <h3>SAT Subject Tests</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -130,7 +131,7 @@
         </div>
     </section>
     <section id="learning-section">
-        <div id="card-background">
+        <div id="card-background" data-aos="fadeInUp" data-aos-once="true">
             <div class="red" id="learning-title">
                 <h2>LEARNING</h2>
                 <p class="italic">For me, learning is the purpose of my life, and it is the source of my upmost happiness.
@@ -140,7 +141,7 @@
             <div class="red" id="horizontal-bar"></div>
         </div>
 
-        <div class="learning-divs red" id="reading">
+        <div class="learning-divs red" id="reading" data-aos="fadeInRightBig" data-aos-once="true">
             <img class="academics-icon" src="graphics/book-icon.svg">
             <h3>READING</h3>
             <div class="text">
@@ -240,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <div class="learning-divs dark-gray" id="programming">
+        <div class="learning-divs dark-gray animated fadeInRightBig" id="programming">
             <img class="academics-icon" src="graphics/coding-icon.svg">
             <h3>PROGRAMMING</h3>
             <div class="text">
@@ -339,4 +340,14 @@
 
         })();
     </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            useClassNames: true,
+            initClassName: false,
+            animatedClassName: 'animated',
+        });
+    </script>
 </body>
+</html>

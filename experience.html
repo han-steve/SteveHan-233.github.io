@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/animate.css">
-    <title>Academics</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Experience</title>
 </head>
 
 <body>
@@ -63,39 +64,55 @@
             <span></span>
         </div>
     </nav>
-    <h1>EXPERIENCE</h1>
-    <p id="description">
-        <em>- refinery for my abilities</em>
-    </p>
-    <section class="tier1">
-        <h2>COMMUNITY</h2>
-        <section class="tier2">
-            <h3>Working</h3>
-            <p>I worked as a waiter in a restaurant 36 hours a week during the summer, and I continue to work on the weekends
-                during the school year. </p>
-            <p class="darker">In this high-stress environment, I need to cater guests, answer phone calls, process payments,
-                bring out dishes, and do the cleaning. This experience had profound impact on my life: I learned valuable
-                social skills by communicating with different customers, and I became more mature at managing my relationship
-                with coworkers. </p>
-            <p>So far, I have earned</p>
-            <div class="number">$2758</div>
-        </section>
-        <section class="tier2">
-            <h3>Volunteering</h3>
-            <p>Volunteering helped me to get more involved in the community and to become a more well-rounded person, and
-                I cherish the opportunities to meet different people and to reciprocate the benefits that I received from
-                the community.</p>
-            <p>The activities that I engaged in includes: </p>
-            <section class="tier3">
-                <p class="darker">Shelving and boxing books in the library</p>
-                <p class="darker">Helping non-profit ESL classes to teach Chinese people English</p>
-                <p class="darker">Facilitating local events such as summer camps for kids</p>
-                <p class="darker">Using my digital creation skills to photograph and film local events such as sport tournaments</p>
+    <main>
+        <h1>EXPERIENCE</h1>
+        <p id="description">
+            <em>- refinery for my abilities</em>
+        </p>
+        <section class="tier1">
+            <h2>COMMUNITY</h2>
+            <section class="tier2">
+                <h3>Working</h3>
+                <p>I worked as a waiter in a restaurant 36 hours a week during the summer, and I continue to work on the
+                    weekends during the school year. </p>
+                <p class="darker">In this high-stress environment, I need to cater guests, answer phone calls, process payments,
+                    bring out dishes, and do the cleaning. This experience had profound impact on my life: I learned valuable
+                    social skills by communicating with different customers, and I became more mature at managing my relationship
+                    with coworkers. </p>
+                <p>So far, I have earned</p>
+                <div class="number">$2758</div>
             </section>
-            <p>So far, the number of hours I have accumulated is: </p>
-            <div class="number">143</div>
+            <section class="tier2">
+                <h3>Volunteering</h3>
+                <p>Volunteering helped me to get more involved in the community and to become a more well-rounded person,
+                    and I cherish the opportunities to meet different people and to reciprocate the benefits that I received
+                    from the community.</p>
+                <p>The activities that I engaged in includes: </p>
+                <section class="tier3">
+                    <p class="darker">Shelving and boxing books in the library</p>
+                    <p class="darker">Helping non-profit ESL classes to teach Chinese people English</p>
+                    <p class="darker">Facilitating local events such as summer camps for kids</p>
+                    <p class="darker">Using my digital creation skills to photograph and film local events such as sport
+                        tournaments
+                    </p>
+                </section>
+                <p>So far, the number of hours I have accumulated is: </p>
+                <div class="number">143</div>
+            </section>
         </section>
-    </section>
+        <section class="tier1">
+            <h2>CLUBS</h2>
+            <section class="tier2">
+                <h3>Robotics</h3>
+                <p class="time">2017 – 2019; 3 2-hour meetings per week in addition to extra practices and events. </p>
+                <p>In our robotics team, I was the main engineer of our robot that won a regional competition. I designed
+                    and constructed many components of the robot, and I wrote the program that allows us to control them
+                    remotely. During the construction of the robot, I learned to solve problems using the engineering process
+                    and to document the process on the engineering notebook, which are also beneficial to my programming
+                    endeavors. </p>
+            </section>
+        </section>
+    </main>
 
     <script>
         (function () {
@@ -109,6 +126,15 @@
             });
 
         })();
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            useClassNames: true,
+            initClassName: false,
+            animatedClassName: 'animated',
+        });
     </script>
 
 </body>

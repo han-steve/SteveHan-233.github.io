@@ -1,3 +1,7 @@
+main {
+    max-width: 1700px;
+    margin: auto;
+}
 h1 {
     margin-bottom: .6rem;
 }
