@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/academics.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Academics</title>
 </head>
 
@@ -64,7 +63,7 @@
             <span></span>
         </div>
     </nav>
-    <h1 class="animated fadeInUp" >ACADEMICS</h1>
+    <h1 class="animated fadeInUp">ACADEMICS</h1>
     <p class="animated fadeInRightBig" id="description">
         <em>- nourishments for my curiosity</em>
     </p>
@@ -131,7 +130,7 @@
         </div>
     </section>
     <section id="learning-section">
-        <div id="card-background" data-aos="fadeInUp" data-aos-once="true">
+        <div id="card-background">
             <div class="red" id="learning-title">
                 <h2>LEARNING</h2>
                 <p class="italic">For me, learning is the purpose of my life, and it is the source of my upmost happiness.
@@ -141,7 +140,7 @@
             <div class="red" id="horizontal-bar"></div>
         </div>
 
-        <div class="learning-divs red" id="reading" data-aos="fadeInRightBig" data-aos-once="true">
+        <div class="learning-divs red" id="reading">
             <img class="academics-icon" src="graphics/book-icon.svg">
             <h3>READING</h3>
             <div class="text">
@@ -251,16 +250,18 @@
                     Java. </p>
                 <div class="expand-trigger">what I've done</div>
                 <div class="expand-div">
-                    <a target="_blank" style="text-decoration:none" href="https://www.freecodecamp.org/certification/stevehan/responsive-web-design">
-                        <div class="expand-cards">
-                            <img class="card-icon" src="img/freecodecamp.jpg">
-                            <div>
-                                <p>
-                                    <em>FreeCodeCamp</em>’s web design certification (300 hours)</p>
+
+                    <div class="expand-cards">
+                        <img class="card-icon" src="img/freecodecamp.jpg">
+                        <div>
+                            <p>
+                                <em>FreeCodeCamp</em>’s web design certification (300 hours)</p>
+                            <a target="_blank" href="https://www.freecodecamp.org/certification/stevehan/responsive-web-design">
                                 <small>(click to view)</small>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
+
                     <div class="expand-cards">
                         <img class="card-icon" src="img/bigjava.jpg">
                         <div>
@@ -341,13 +342,4 @@
         })();
     </script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            useClassNames: true,
-            initClassName: false,
-            animatedClassName: 'animated',
-        });
-    </script>
-</body>
 </html>
