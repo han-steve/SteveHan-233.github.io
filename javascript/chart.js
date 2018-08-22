@@ -11,7 +11,7 @@ var general = {
     }]
 };
 var work = {
-    labels: ['Waitering','Volunteering'],
+    labels: ['Waitering', 'Volunteering'],
     datasets: [{
         label: "Work",
         backgroundColor: ['#AEC7E8', '#AEC7E8'],
@@ -30,7 +30,7 @@ var chart = new Chart(ctx, {
     options: {
         legend: {
             display: true,
-            position: 'bottom',
+            position: 'right',
             labels: {
                 fontColor: 'white'
             }
@@ -41,16 +41,17 @@ var chart = new Chart(ctx, {
                     return "hours";
                 }
             }
-        }
+        },
+        maintainAspectRatio: false
     }
 });
 
-canvas.onclick = function(evt) {
+canvas.onclick = function (evt) {
     var activePoints = chart.getElementsAtEvent(evt);
-    if(activePoints[0]) {
+    if (activePoints[0]) {
         var name = general.labels[activePoints[0]['_index']];
         console.log(name);
-        if(name == "Work") {
+        if (name == "Work") {
             changeData(work);
         }
 
@@ -59,9 +60,28 @@ canvas.onclick = function(evt) {
 
 function changeData(newData) {
     console.log(newData);
-    chart.data = newData;
+    chart.config.data = newData;
+    chart.options.cutoutPercentage = 50;
     console.log(chart.data);
     chart.update();
 }
 
 
+if (matchMedia) {
+    const mq = window.matchMedia("(min-width: 1100px)");
+    mq.addListener(WidthChange);
+    WidthChange(mq);
+}
+
+// media query change
+function WidthChange(mq) {
+    if (mq.matches) {
+        chart.options.legend.position = 'left';
+        chart.options.legend.labels.fontSize = 16;
+        chart.update();
+    } else {
+        chart.options.legend.position = 'bottom';
+        chart.options.legend.labels.fontSize = 12;
+        chart.update();
+    }
+}

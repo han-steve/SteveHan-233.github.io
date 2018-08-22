@@ -53,6 +53,8 @@ section {
 }
 .chart {
     width: 100%;
+    position: relative;
+    height: 300px;
 }
 
 @media only screen and (max-width: 350px) {
@@ -70,9 +72,31 @@ section {
         margin: 1.5em 2em;
     }
 }
+@media only screen and (min-width: 800px) {
+    #time-tracking .background {
+        display: grid;
+        grid-template-columns: auto 300px;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "title title"
+                             "light light"
+                             "p chart"
+    }
+    #time-tracking h3 {
+        grid-area: title;
+    }
+    #time-tracking .light-text {
+        grid-area: light;
+    }
+    #time-tracking p {
+        grid-area: p;
+    }
+}
 @media only screen and (min-width: 1100px) {
     section {
         width: 85%;
         margin: 1.5em auto;
+    }
+    #time-tracking .background {
+        grid-template-columns: auto 20em;
     }
 }
