@@ -61,14 +61,14 @@ var work = {
     }]
 }
 var health = {
-    labels: ['Exercise', 'Life'],
+    labels: ['Exercise', 'Life', 'Mindfulness'],
     datasets: [{
         label: "Health",
-        backgroundColor: ['#B5A0C5','#C5B0D5'],
+        backgroundColor: ['#A590B5','#B5A0C5','#C5B0D5'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
-        data: [51, 94],
+        data: [51, 94, 32],
     }]
 }
 var jobs = {
@@ -137,6 +137,17 @@ var life = {
         borderWidth: 2,
         hoverBorderWidth: 4,
         data: [18, 57, 4, 9, 6],
+    }]
+}
+var mindfulness = {
+    labels: ['Journal', 'Meditation'],
+    datasets: [{
+        label: "Life",
+        backgroundColor: ['#A590B5','#B5A0C5','#C5B0D5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [29, 3],
     }]
 }
 var productivity = {
