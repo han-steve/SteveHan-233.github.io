@@ -1,87 +1,274 @@
-// Datas
-var general = {
-    labels: ['Work', 'Study', 'Hobby', 'Exercise', 'Life', 'Social', 'Entertainment', 'School', 'Productivity', 'Sleep'],
-    datasets: [{
-        label: "General",
-        backgroundColor: ['#AEC7E8', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
-        borderColor: '#313131',
-        borderWidth: 2,
-        hoverBorderWidth: 4,
-        data: [403, 234, 138, 51, 94, 55, 90, 19, 35, 653],
-    }]
-};
-var work = {
-    labels: ['Waitering', 'Volunteering'],
-    datasets: [{
-        label: "Work",
-        backgroundColor: ['#AEC7E8', '#AEC7E8'],
-        data: [373, 30],
-        borderColor: '#313131',
-        borderWidth: 2,
-        hoverBorderWidth: 4,
-    }]
-}
 
 var canvas = document.getElementById('myChart');
 var ctx = canvas.getContext('2d');
+
+Chart.defaults.global.legend.display = true;
+Chart.defaults.global.legend.position = 'right';
+Chart.defaults.global.legend.labels.fontColor = 'white';
+Chart.defaults.global.maintainAspectRatio = false;
+Chart.defaults.global.tooltips.callbacks.afterLabel = function () {
+    return "hours";
+};
+
+
+// Datas
+
+//grands
+var general = {
+    labels: ['Work', 'Study', 'Health', 'Relaxation', 'Jobs'],
+    datasets: [{
+        label: "General",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [123, 311, 799, 109, 403],
+    }],
+};
+
+//parents
+var relaxation = {
+    labels: ['Social', 'Entertainment'],
+    datasets: [{
+        label: "Relaxation",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [55, 54],
+    }]
+}
+var study = {
+    labels: ['Hobby', 'Learning', 'School'],
+    datasets: [{
+        label: "Study",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [53, 238, 20],
+    }]
+}
+var work = {
+    labels: ['Productivity', 'Projects'],
+    datasets: [{
+        label: "Work",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [19, 104],
+    }]
+}
+var health = {
+    labels: ['Exercise', 'Life'],
+    datasets: [{
+        label: "Health",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [51, 748],
+    }]
+}
+var jobs = {
+    labels: ['Waiter', 'Volunteer'],
+    datasets: [{
+        label: "Jobs",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [373, 30],
+    }]
+}
+
+//Chidren
+var entertainment = {
+    labels: ['YouTube', 'TV Shows'],
+    datasets: [{
+        label: "Entertainment",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [51, 3],
+    }]
+}
+var exercise = {
+    labels: ['Biking', 'Running', 'Working Out', 'Basketball'],
+    datasets: [{
+        label: "Exercise",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [14, 12, 15, 10],
+    }]
+}
+var hobby = {
+    labels: ['Guitar'],
+    datasets: [{
+        label: "Hobby",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [53],
+    }]
+}
+var learning = {
+    labels: ['Web Development', 'Reading', 'Elocution', 'College Search', 'Memorize Vocab'],
+    datasets: [{
+        label: "Learning",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [157, 6, 5, 65, 5],
+    }]
+}
+var life = {
+    labels: ['Sleep', 'Wash Up', 'Eat', 'Restroom', 'Shower', 'Hospital'],
+    datasets: [{
+        label: "Life",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [654, 18, 57, 4, 9, 6],
+    }]
+}
+var productivity = {
+    labels: ['Internet', 'Computer', 'Housework', 'Errands'],
+    datasets: [{
+        label: "Productivity",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [2, 10, 4, 3],
+    }]
+}
+var projects = {
+    labels: ['Website', 'Possessions'],
+    datasets: [{
+        label: "Projects",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [86, 18],
+    }]
+}
+var school = {
+    labels: ['Driver\'s Ed'],
+    datasets: [{
+        label: "School",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [20],
+    }]
+}
+var social = {
+    labels: ['Parents', 'Friends', 'Others'],
+    datasets: [{
+        label: "Social",
+        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        borderColor: '#313131',
+        borderWidth: 2,
+        hoverBorderWidth: 4,
+        data: [12, 37, 6],
+    }]
+}
+
+
 var chart = new Chart(ctx, {
     type: 'pie',
     data: general,
     options: {
-        legend: {
+        title: {
             display: true,
-            position: 'right',
-            labels: {
-                fontColor: 'white'
-            }
-        },
-        tooltips: {
-            callbacks: {
-                afterLabel: function () {
-                    return "hours";
-                }
-            }
-        },
-        maintainAspectRatio: false
+            text:'My Summer',
+            fontColor: 'white'
+        }
     }
 });
+
+var levelCounter = 0;
+var previousLevel = null;
 
 canvas.onclick = function (evt) {
     var activePoints = chart.getElementsAtEvent(evt);
     if (activePoints[0]) {
-        var name = general.labels[activePoints[0]['_index']];
-        console.log(name);
-        if (name == "Work") {
-            changeData(work);
+        var name = chart.data.labels[activePoints[0]['_index']].toLowerCase();
+        if (window[name]) {
+            createChart(window[name]);
         }
-
     }
 }
 
-function changeData(newData) {
-    console.log(newData);
-    chart.config.data = newData;
-    chart.options.cutoutPercentage = 50;
-    console.log(chart.data);
-    chart.update();
+function createChart(newData) {
+    levelCounter++;
+    previousLevel = chart.data.datasets[0].label;
+    chart.destroy();
+    chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: newData,
+        options: {
+            title: {
+                display: true,
+                text: newData.datasets[0].label,
+                position: 'top',
+                fontColor: 'white',
+            }
+        }
+    })
+    WidthChange(mq);
+    arrow.classList.remove("hidden");
 }
 
 
+//back arrow
+var arrow = document.getElementById("back-arrow");
+arrow.addEventListener("click", function () {
+    if (levelCounter == 1) {
+        chart.config.data = general;
+        chart.options.cutoutPercentage = 0;
+        chart.options.title.text = "My Summer";
+        arrow.classList.add("hidden");
+        previousLevel = null;
+        levelCounter = 0;
+    } else if (levelCounter == 2) {
+        let newData = window[previousLevel.toLowerCase()];
+        chart.config.data = newData;
+        chart.options.title.text = newData.datasets[0].label;
+        levelCounter = 1;
+    }
+    chart.update();
+
+})
+
+
+// media query
 if (matchMedia) {
-    const mq = window.matchMedia("(min-width: 1100px)");
+    var mq = window.matchMedia("(min-width: 1000px)");
     mq.addListener(WidthChange);
     WidthChange(mq);
 }
 
-// media query change
 function WidthChange(mq) {
     if (mq.matches) {
         chart.options.legend.position = 'left';
-        chart.options.legend.labels.fontSize = 16;
+        chart.options.legend.labels.fontSize = 20;
+        chart.options.title.fontSize = 30;
         chart.update();
     } else {
         chart.options.legend.position = 'bottom';
         chart.options.legend.labels.fontSize = 12;
+        chart.options.title.fontSize = 23;
         chart.update();
     }
 }

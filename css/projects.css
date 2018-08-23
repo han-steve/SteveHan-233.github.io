@@ -54,7 +54,29 @@ section {
 .chart {
     width: 100%;
     position: relative;
-    height: 300px;
+    height: 350px;
+}
+#back-arrow {
+    position: absolute;
+    width: 50px;
+    height: 33px;
+    top: 5px;
+    left: 0;
+
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px;
+
+    transition: .5s ease;
+
+    cursor: pointer;
+}
+.hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+#back-arrow:hover {
+    background-color: #313131;
 }
 
 @media only screen and (max-width: 350px) {
@@ -90,13 +112,21 @@ section {
     #time-tracking p {
         grid-area: p;
     }
+    .chart {
+        height: 300px;
+    }
 }
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1000px) {
     section {
         width: 85%;
         margin: 1.5em auto;
     }
     #time-tracking .background {
-        grid-template-columns: auto 20em;
+        grid-template-columns: auto 25em;
+    }
+    .chart {
+        height: 350px;
+        padding: 0 1em;
+        box-sizing: border-box;
     }
 }
