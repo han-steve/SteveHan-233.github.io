@@ -164,7 +164,7 @@ ul {
 .expand-div {
     display: flex;
     flex-direction: column; 
-    /* max-height: 0px; */
+    max-height: 500px;
     transition: .5s ease-in-out;
     overflow: hidden;
 }
