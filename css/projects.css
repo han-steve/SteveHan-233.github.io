@@ -109,7 +109,7 @@ section {
     #time-tracking .light-text {
         grid-area: light;
     }
-    #time-tracking p {
+    #time-tracking .text {
         grid-area: p;
     }
     .chart {

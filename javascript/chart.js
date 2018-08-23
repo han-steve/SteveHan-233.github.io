@@ -15,14 +15,14 @@ Chart.defaults.global.tooltips.callbacks.afterLabel = function () {
 
 //grands
 var general = {
-    labels: ['Work', 'Study', 'Health', 'Relaxation', 'Jobs'],
+    labels: [ 'Jobs', 'Study','Work', 'Relaxation', 'Health', 'Sleep'],
     datasets: [{
         label: "General",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#AEC7E8',  '#98DF8A', '#FFBB78', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
-        data: [123, 311, 799, 109, 403],
+        data: [403,311,123, 109, 145, 654],
     }],
 };
 
@@ -31,7 +31,7 @@ var relaxation = {
     labels: ['Social', 'Entertainment'],
     datasets: [{
         label: "Relaxation",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#EF8886','#FF9896'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -42,7 +42,7 @@ var study = {
     labels: ['Hobby', 'Learning', 'School'],
     datasets: [{
         label: "Study",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#78BF6A','#88CF7A','#98DF8A'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -53,7 +53,7 @@ var work = {
     labels: ['Productivity', 'Projects'],
     datasets: [{
         label: "Work",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#EFAB68','#FFBB78'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -64,11 +64,11 @@ var health = {
     labels: ['Exercise', 'Life'],
     datasets: [{
         label: "Health",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#B5A0C5','#C5B0D5'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
-        data: [51, 748],
+        data: [51, 94],
     }]
 }
 var jobs = {
@@ -88,7 +88,7 @@ var entertainment = {
     labels: ['YouTube', 'TV Shows'],
     datasets: [{
         label: "Entertainment",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#EF8886','#FF9896'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -99,7 +99,7 @@ var exercise = {
     labels: ['Biking', 'Running', 'Working Out', 'Basketball'],
     datasets: [{
         label: "Exercise",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#9580A5','#A590B5','#B5A0C5','#C5B0D5'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -110,7 +110,7 @@ var hobby = {
     labels: ['Guitar'],
     datasets: [{
         label: "Hobby",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#78BF6A'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -121,7 +121,7 @@ var learning = {
     labels: ['Web Development', 'Reading', 'Elocution', 'College Search', 'Memorize Vocab'],
     datasets: [{
         label: "Learning",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#589F4A','#68AF5A','#78BF6A','#88CF7A','#98DF8A'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -129,21 +129,21 @@ var learning = {
     }]
 }
 var life = {
-    labels: ['Sleep', 'Wash Up', 'Eat', 'Restroom', 'Shower', 'Hospital'],
+    labels: ['Wash Up', 'Eat', 'Restroom', 'Shower', 'Hospital'],
     datasets: [{
         label: "Life",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#857095','#9580A5','#A590B5','#B5A0C5','#C5B0D5'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
-        data: [654, 18, 57, 4, 9, 6],
+        data: [18, 57, 4, 9, 6],
     }]
 }
 var productivity = {
-    labels: ['Internet', 'Computer', 'Housework', 'Errands'],
+    labels: ['Research', 'Computer', 'Housework', 'Errands'],
     datasets: [{
         label: "Productivity",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#CF8B48','#DF9B58','#EFAB68','#FFBB78'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -151,10 +151,10 @@ var productivity = {
     }]
 }
 var projects = {
-    labels: ['Website', 'Possessions'],
+    labels: ['Website (this one)', 'Possessions'],
     datasets: [{
         label: "Projects",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#EFAB68','#FFBB78'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -165,7 +165,7 @@ var school = {
     labels: ['Driver\'s Ed'],
     datasets: [{
         label: "School",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#98DF8A'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
@@ -176,7 +176,7 @@ var social = {
     labels: ['Parents', 'Friends', 'Others'],
     datasets: [{
         label: "Social",
-        backgroundColor: ['#AEC7E8', '#73C2FB', '#FFBB78', '#98DF8A', '#FF9896', '#C5B0D5', '#C49C94', '#F7B6D2', '#C7C7C7', '#DBDB8D', '#9EDAE5'],
+        backgroundColor: ['#CF6866','#DF7876','#EF8886'],
         borderColor: '#313131',
         borderWidth: 2,
         hoverBorderWidth: 4,
