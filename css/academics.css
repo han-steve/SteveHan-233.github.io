@@ -165,7 +165,7 @@ ul {
     display: flex;
     flex-direction: column; 
     max-height: 0px;
-    /* transition: .5s ease-in-out; */
+    transition: .5s ease-in-out; 
     overflow: hidden;
 }
 .expand-cards {
@@ -188,7 +188,7 @@ ul {
     width: 100%;
 }
 .expand-cards p {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #313131;
     margin: 0;
     font-weight: 600;
