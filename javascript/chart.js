@@ -142,7 +142,7 @@ var life = {
 var mindfulness = {
     labels: ['Journal', 'Meditation'],
     datasets: [{
-        label: "Life",
+        label: "Mindfulness",
         backgroundColor: ['#A590B5','#B5A0C5','#C5B0D5'],
         borderColor: '#313131',
         borderWidth: 2,
