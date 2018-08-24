@@ -7,7 +7,7 @@ for(var i = 0; i < triggers.length; i ++) {
         if (div.style.maxHeight) {
             div.style.maxHeight = null;
         } else {
-            div.style.maxHeight = 700 + "px";
+            div.style.maxHeight = 900 + "px";
         }
     });
 }

@@ -17,7 +17,7 @@ h3 {
     display: grid;
     align-content: flex-end;
     justify-content: right;
-    margin-right: 2em;
+    padding-right: 2em;
 }
 .number {
     font-weight: 900;
@@ -110,9 +110,9 @@ section {
     opacity: 0;
     transform: translateX(-50px);
 }
-#back-arrow:hover {
+/* #back-arrow:hover {
     background-color: #313131;
-}
+} */
 .second {
     margin-bottom: 0;
 }
