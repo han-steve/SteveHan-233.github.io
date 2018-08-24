@@ -2,8 +2,9 @@ main {
     max-width: 1700px;
     margin: auto;
 }
-body {
+body,html {
     overflow-x: hidden;
+    width: 100vw;
 }
 h1 {
     margin-bottom: .6rem;
@@ -71,7 +72,7 @@ section {
 }
 #journaling h3 {
     color: #313131;
-    font-size: 2.3em;
+    font-size: 2.1em;
 }
 #journaling p {
     color: #313131;
