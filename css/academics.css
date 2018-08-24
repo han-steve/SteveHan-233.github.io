@@ -1,8 +1,9 @@
 h3 {
     font-size: 2.5em;
 }
-body {
+body,html {
     overflow-x: hidden;
+    width: 100vw;
 }
 /** General **/
 .red {

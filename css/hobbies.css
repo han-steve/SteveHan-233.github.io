@@ -1,4 +1,7 @@
-
+body,html {
+    overflow-x: hidden;
+    width: 100vw;
+}
 #guitar-section{
     background: #CC3734;
     padding: 10px 20px 10px 0px;

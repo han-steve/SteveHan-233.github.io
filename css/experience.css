@@ -2,6 +2,10 @@ main {
     max-width: 1400px;
     margin: auto;
 }
+body,html {
+    overflow-x: hidden;
+    width: 100vw;
+}
 
 /** Texts **/
 h2 {
