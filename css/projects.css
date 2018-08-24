@@ -2,6 +2,9 @@ main {
     max-width: 1700px;
     margin: auto;
 }
+body {
+    overflow-x: hidden;
+}
 h1 {
     margin-bottom: .6rem;
 }
