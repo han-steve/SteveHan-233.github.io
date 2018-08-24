@@ -151,8 +151,12 @@ ul {
     padding: .5em 1em;
     border-radius: 15px;
 }
-.spanish {
+.spanish-button {
     background-color: #CC3734;
+    color: #F1F1F1;
+}
+.math-button {
+    background-color: #313131;
     color: #F1F1F1;
 }
 .expand-trigger::before{
@@ -175,6 +179,7 @@ ul {
     box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
     overflow: hidden;
     margin-bottom: 1.5em;
+    max-height: 120px;
 }
 #spanish-section .expand-cards {
     background-color: #313131;
@@ -182,17 +187,23 @@ ul {
     align-items: center;
     padding: 1em;
 }
+.math-section .expand-cards {
+    background-color: #313131;
+}
 .card-icon {
     width: 100%;
 }
 .expand-cards p {
-    font-size: 1em;
+    font-size: 1.1em;
     color: #313131;
     margin: 0;
     font-weight: 600;
 }
 #spanish-section .expand-cards p {
     color: #CBCACA;
+}
+.math-section .expand-cards p {
+    color: #F1F1F1;
 }
 .expand-cards em {
     font-weight: 700;
@@ -270,7 +281,7 @@ ul {
         display: grid;
         grid-template-rows: 4em auto;
         grid-template-columns: 5em calc(86vw - 5em);
-        grid-column-gap: 1em;
+        grid-column-gap: 1.5em;
     }
     .details {
         padding: 0 3em;
@@ -335,5 +346,6 @@ ul {
     }
     .expand-cards {
         grid-template-columns: 4em auto;
+        max-height: 105px;
     }
 }
