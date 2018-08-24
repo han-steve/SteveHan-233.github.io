@@ -1,6 +1,6 @@
 var elements = document.getElementsByClassName("scroll-right");
 for(var i = 0; i < elements.length; i ++) {
-    var element = elements[i];
+    let element = elements[i];
     element.style.visibility = "hidden";
     $(window).on('scroll' , function(){
         var scroll_pos = $(window).scrollTop() + $(window).height();

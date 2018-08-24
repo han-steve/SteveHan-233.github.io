@@ -52,12 +52,14 @@ section {
     border-radius: 45px;
     padding: 4.5em .6em 1em 2em;
 }
-#spaced-repetition .projects-icon-div {
+.right-side .projects-icon-div {
     right: 0;
     left: auto;
 }
 #spaced-repetition .background {
     background-color: #707070;
+}
+.right-side .background {
     margin-right: 1.8em;
     margin-left: 0;
 }
@@ -109,6 +111,9 @@ section {
 #back-arrow:hover {
     background-color: #313131;
 }
+.second {
+    margin-bottom: 0;
+}
 
 @media only screen and (max-width: 350px) {
     html {
@@ -145,6 +150,7 @@ section {
     }
     .second {
         grid-area: p;
+        margin-bottom: 1em;
     }
     .chart {
         height: 300px;

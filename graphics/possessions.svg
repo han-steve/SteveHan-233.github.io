@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #313131;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #cc3734;
+      }
+
+      .cls-2, .cls-4, .cls-6 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        fill: #cc3734;
+      }
+
+      .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_54" data-name="Group 54" transform="translate(-113 -2697)">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Group_51" data-name="Group 51" transform="translate(104 906)">
+        <g id="Group_49" data-name="Group 49">
+          <g id="Group_41" data-name="Group 41" transform="translate(-5 1558)">
+            <g id="Ellipse_10" data-name="Ellipse 10" class="cls-1" transform="translate(14 233)">
+              <circle class="cls-5" cx="54" cy="54" r="54"/>
+              <circle class="cls-6" cx="54" cy="54" r="49"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Rectangle_67" data-name="Rectangle 67" class="cls-2" transform="translate(135 2728)">
+      <rect class="cls-5" width="65" height="46" rx="10"/>
+      <rect class="cls-6" x="1.5" y="1.5" width="62" height="43" rx="8.5"/>
+    </g>
+    <path id="Path_58" data-name="Path 58" class="cls-3" d="M6088.429,2803.965s29.061,22.884,59.809,1.574v-4.847l-6.46-3.979h-44.487l-7.053,1.465-1.809,5.787" transform="translate(-5951 -67)"/>
+    <g id="Rectangle_68" data-name="Rectangle 68" class="cls-4" transform="translate(157 2722)">
+      <rect class="cls-5" width="21" height="8" rx="2"/>
+      <rect class="cls-6" x="-1" y="-1" width="23" height="10" rx="3"/>
+    </g>
+  </g>
+</svg>
