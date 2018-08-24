@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #313131;
+        stroke: #cbcaca;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: #707070;
+      }
+
+      .cls-3 {
+        fill: #cbcaca;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_50" data-name="Group 50" transform="translate(-9 -1791)">
+    <g id="Group_49" data-name="Group 49">
+      <g id="Group_41" data-name="Group 41" transform="translate(-5 1558)">
+        <g id="Ellipse_10" data-name="Ellipse 10" class="cls-1" transform="translate(14 233)">
+          <circle class="cls-4" cx="54" cy="54" r="54"/>
+          <circle class="cls-5" cx="54" cy="54" r="49"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_42" data-name="Group 42" transform="translate(-114.923 52.077)">
+      <rect id="Rectangle_39" data-name="Rectangle 39" class="cls-2" width="57.847" height="57.847" rx="8" transform="translate(149 1764)"/>
+      <path id="Path_51" data-name="Path 51" class="cls-3" d="M6117.273,1831v37.22l13.05-4.6,13.05,4.6V1831Z" transform="translate(-5952.661 -67)"/>
+    </g>
+  </g>
+</svg>
