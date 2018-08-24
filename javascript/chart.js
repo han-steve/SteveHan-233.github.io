@@ -195,91 +195,105 @@ var social = {
     }]
 }
 
-
-var chart = new Chart(ctx, {
-    type: 'pie',
-    data: general,
-    options: {
-        title: {
-            display: true,
-            text:'My Summer',
-            fontColor: 'white'
-        }
-    }
-});
-
-var levelCounter = 0;
-var previousLevel = null;
-
-canvas.onclick = function (evt) {
-    var activePoints = chart.getElementsAtEvent(evt);
-    if (activePoints[0]) {
-        var name = chart.data.labels[activePoints[0]['_index']].toLowerCase();
-        if (window[name]) {
-            createChart(window[name]);
-        }
-    }
-}
-
-function createChart(newData) {
-    levelCounter++;
-    previousLevel = chart.data.datasets[0].label;
-    chart.destroy();
-    chart = new Chart(ctx, {
-        type: 'doughnut',
-        data: newData,
+function load(){
+    var chart = new Chart(ctx, {
+        type: 'pie',
+        data: general,
         options: {
             title: {
                 display: true,
-                text: newData.datasets[0].label,
-                position: 'top',
-                fontColor: 'white',
+                text:'My Summer',
+                fontColor: 'white'
             }
         }
-    })
-    WidthChange(mq);
-    arrow.classList.remove("hidden");
-}
-
-
-//back arrow
-var arrow = document.getElementById("back-arrow");
-arrow.addEventListener("click", function () {
-    if (levelCounter == 1) {
-        chart.config.data = general;
-        chart.options.cutoutPercentage = 0;
-        chart.options.title.text = "My Summer";
-        arrow.classList.add("hidden");
-        previousLevel = null;
-        levelCounter = 0;
-    } else if (levelCounter == 2) {
-        let newData = window[previousLevel.toLowerCase()];
-        chart.config.data = newData;
-        chart.options.title.text = newData.datasets[0].label;
-        levelCounter = 1;
+    });
+    
+    var levelCounter = 0;
+    var previousLevel = null;
+    
+    canvas.onclick = function (evt) {
+        var activePoints = chart.getElementsAtEvent(evt);
+        if (activePoints[0]) {
+            var name = chart.data.labels[activePoints[0]['_index']].toLowerCase();
+            if (window[name]) {
+                createChart(window[name]);
+            }
+        }
     }
-    chart.update();
-
-})
-
-
-// media query
-if (matchMedia) {
-    var mq = window.matchMedia("(min-width: 1000px)");
-    mq.addListener(WidthChange);
-    WidthChange(mq);
+    
+    function createChart(newData) {
+        levelCounter++;
+        previousLevel = chart.data.datasets[0].label;
+        chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: newData,
+            options: {
+                title: {
+                    display: true,
+                    text: newData.datasets[0].label,
+                    position: 'top',
+                    fontColor: 'white',
+                }
+            }
+        })
+        WidthChange(mq);
+        arrow.classList.remove("hidden");
+    }
+    
+    
+    //back arrow
+    var arrow = document.getElementById("back-arrow");
+    arrow.addEventListener("click", function () {
+        if (levelCounter == 1) {
+            chart.config.data = general;
+            chart.options.cutoutPercentage = 0;
+            chart.options.title.text = "My Summer";
+            arrow.classList.add("hidden");
+            previousLevel = null;
+            levelCounter = 0;
+        } else if (levelCounter == 2) {
+            let newData = window[previousLevel.toLowerCase()];
+            chart.config.data = newData;
+            chart.options.title.text = newData.datasets[0].label;
+            levelCounter = 1;
+        }
+        chart.update();
+    
+    })
+    
+    
+    // media query
+    if (matchMedia) {
+        var mq = window.matchMedia("(min-width: 1000px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+    
+    function WidthChange(mq) {
+        if (mq.matches) {
+            chart.options.legend.position = 'left';
+            chart.options.legend.labels.fontSize = 20;
+            chart.options.title.fontSize = 30;
+            chart.update();
+        } else {
+            chart.options.legend.position = 'bottom';
+            chart.options.legend.labels.fontSize = 12;
+            chart.options.title.fontSize = 23;
+            chart.update();
+        }
+    }
 }
+var loaded = false; 
 
-function WidthChange(mq) {
-    if (mq.matches) {
-        chart.options.legend.position = 'left';
-        chart.options.legend.labels.fontSize = 20;
-        chart.options.title.fontSize = 30;
-        chart.update();
-    } else {
-        chart.options.legend.position = 'bottom';
-        chart.options.legend.labels.fontSize = 12;
-        chart.options.title.fontSize = 23;
-        chart.update();
+window.addEventListener('scroll' , show);
+
+function show(){
+    var scroll_pos = $(window).scrollTop() + $(window).height();
+    var element_pos = $(canvas).offset().top;
+    if (scroll_pos > element_pos) {
+        $(canvas).addClass('animated fadeInRightBig');
+        setTimeout(load, 500);
+        window.removeEventListener('scroll', show);
     }
 }

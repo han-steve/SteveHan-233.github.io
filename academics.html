@@ -69,7 +69,7 @@
     </p>
 
     <section id="grades-section">
-        <div class="red grades-divs animated fadeInRightBig delay-400ms" id="grades">
+        <div class="red grades-divs" id="grades">
             <h3>Grades</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -86,7 +86,7 @@
                 </ul>
             </div>
         </div>
-        <div class="dark-gray grades-divs animated fadeInRightBig delay-200ms" id="ap-scores">
+        <div class="dark-gray grades-divs " id="ap-scores">
             <h3>AP-Scores</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -113,7 +113,7 @@
                 </ul>
             </div>
         </div>
-        <div class="gray grades-divs animated fadeInRightBig" id="SAT">
+        <div class="gray grades-divs" id="SAT">
             <h3>SAT Subject Tests</h3>
             <div class="grade-lists">
                 <ul class="left-column">
@@ -131,16 +131,16 @@
     </section>
     <section id="learning-section">
         <div id="card-background">
-            <div class="red" id="learning-title">
+            <div class="red scroll zoomInUp" id="learning-title">
                 <h2>LEARNING</h2>
                 <p class="italic">For me, learning is the purpose of my life, and it is the source of my upmost happiness.
                     It grants me the freedom to change, and it enables me the potential to grow. No matter how many mistakes
                     I make, no matter how deep I fall - as long as I can learn, I am omnipotent. </p>
             </div>
-            <div class="red" id="horizontal-bar"></div>
+            <div class="red scroll fadeInRightBig" id="horizontal-bar"></div>
         </div>
 
-        <div class="learning-divs red" id="reading">
+        <div class="learning-divs red scroll fadeInUpBig" id="reading">
             <img class="academics-icon" src="graphics/book-icon.svg">
             <h3>READING</h3>
             <div class="text">
@@ -240,7 +240,7 @@
                 </div>
             </div>
         </div>
-        <div class="learning-divs dark-gray animated fadeInRightBig" id="programming">
+        <div class="learning-divs dark-gray scroll fadeInUpBig" id="programming">
             <img class="academics-icon" src="graphics/coding-icon.svg">
             <h3>PROGRAMMING</h3>
             <div class="text">
@@ -301,7 +301,7 @@
                 </div>
             </div>
         </div>
-        <div class="learning-divs gray" id="language-learning">
+        <div class="learning-divs gray scroll fadeInUpBig" id="language-learning">
             <img class="academics-icon" src="graphics/spanish-icon.png">
             <h3>LANGUAGE LEARNING</h3>
             <div class="text">
@@ -330,7 +330,7 @@
                 </div>
             </div>
         </div>
-        <div class="learning-divs red" id="math">
+        <div class="learning-divs red scroll fadeInUpBig" id="math">
             <img class="academics-icon" src="graphics/math-icon.png">
             <h3>MATH</h3>
             <div class="text">
@@ -379,5 +379,23 @@
         })();
     </script>
 
+    <script>
+        var divs = document.getElementsByClassName("grades-divs");
+        if (window.getComputedStyle(document.getElementById('grades-section'), null).getPropertyValue("display") !== "flex") {
+            divs[0].classList.add("animated", 'fadeInRightBig', 'delay-200ms');
+            divs[1].classList.add("animated", 'fadeInRightBig', 'delay-400ms');
+            divs[2].classList.add("scroll","fadeInRightBig");
+        } else {
+            divs[0].classList.add("animated", 'fadeInRightBig', 'delay-600ms');
+            divs[1].classList.add("animated", 'fadeInRightBig', 'delay-400ms');
+            divs[2].classList.add("animated", 'fadeInRightBig', 'delay-200ms');
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="javascript/scroll.js"></script>
+
 </body>
+
 </html>

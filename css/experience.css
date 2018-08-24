@@ -56,6 +56,9 @@ section {
     border-color: #707070;
     margin-bottom: 1em;
 }
+.last-tier {
+    margin-bottom: 0;
+}
 
 /** Gallery **/
 .cards {
