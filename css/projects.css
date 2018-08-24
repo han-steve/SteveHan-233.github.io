@@ -88,6 +88,8 @@ section {
     width: 100%;
     position: relative;
     height: 350px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 #back-arrow {
     position: absolute;
