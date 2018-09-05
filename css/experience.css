@@ -2,10 +2,6 @@ main {
     max-width: 1400px;
     margin: auto;
 }
-body,html {
-    overflow-x: hidden;
-    width: 100vw;
-}
 
 /** Texts **/
 h2 {
@@ -106,6 +102,12 @@ small {
         padding: 0 2em;
     }
 }
+@media only screen and (max-width: 800px) {
+    body,html {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+}
 @media only screen and (min-width: 800px) {
     section {
         border-width: .6em;
@@ -113,4 +115,5 @@ small {
     .tier1 {
         margin-left: 3em;
     }
+    
 }
