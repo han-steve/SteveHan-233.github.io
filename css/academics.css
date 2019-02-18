@@ -215,6 +215,12 @@ ul {
     display: block;
     text-align: center;
 }
+#devpost small {
+    display: inline;
+}
+#devpost {
+    display: inline;
+}
 #spanish-section .expand-cards small {
     display: inline; 
     color: #CBCACA;
