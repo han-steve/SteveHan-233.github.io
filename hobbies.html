@@ -1,346 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/hobbies.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/default-skin/default-skin.css">
-    <link rel="stylesheet" href="css/photoswipe.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/hobbies.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/default-skin/default-skin.css" />
+    <link rel="stylesheet" href="css/photoswipe.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Hobbies</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <a href="index.html" id="profile-link">
-            <figure>
-                <img id="profile-pic" src="./graphics/profile-pic.png">
-                <figcaption id="name">Steve Han</figcaption>
-            </figure>
-        </a>
-        <div class="menu">
-            <a href="academics.html">Academics</a>
-            <a href="hobbies.html">Hobbies</a>
-            <a href="projects.html">Projects</a>
-            <a href="experience.html">Experience</a>
+      <a href="index.html" id="profile-link">
+        <figure>
+          <img id="profile-pic" src="./graphics/profile-pic.png" />
+          <figcaption id="name">Steve Han</figcaption>
+        </figure>
+      </a>
+      <div class="menu">
+        <a href="academics.html">Academics</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+      <div id="mobile-menu">
+        <div class="icon-div animated fadeInUp">
+          <img class="circle" src="graphics/redCircle.svg" />
+          <a href="academics.html">
+            <img class="icon" id="book-icon" src="graphics/book-icon.svg" />
+          </a>
+          <figcaption class="caption">Academics</figcaption>
         </div>
-        <div id="mobile-menu">
-            <div class="icon-div animated fadeInUp">
-                <img class="circle" src="graphics/redCircle.svg">
-                <a href="academics.html">
-                    <img class="icon" id="book-icon" src="graphics/book-icon.svg">
-                </a>
-                <figcaption class="caption">Academics</figcaption>
-            </div>
-            <div class="icon-div animated delay-200ms fadeInUp">
-                <img class="circle" src="graphics/redCircle.svg">
-                <a href="hobbies.html">
-                    <img class="icon" id="guitar-icon" src="graphics/guitar-icon.svg">
-                </a>
-                <figcaption class="caption">Hobbies</figcaption>
-            </div>
-            <div class="icon-div animated delay-400ms fadeInUp">
-                <img class="circle" src="graphics/redCircle.svg">
-                <a href="projects.html">
-                    <img class="icon" id="coding-icon" src="graphics/coding-icon.svg">
-                </a>
-                <figcaption class="caption">Projects</figcaption>
-            </div>
-            <div class="icon-div animated delay-600ms fadeInUp">
-                <img class="circle" src="graphics/redCircle.svg">
-                <a href="experience.html">
-                    <img class="icon" id="experience-icon" src="graphics/experience-icon.svg">
-                </a>
-                <figcaption class="caption">Experience</figcaption>
-            </div>
+        <div class="icon-div animated delay-200ms fadeInUp">
+          <img class="circle" src="graphics/redCircle.svg" />
+          <a href="hobbies.html">
+            <img class="icon" id="guitar-icon" src="graphics/guitar-icon.svg" />
+          </a>
+          <figcaption class="caption">Hobbies</figcaption>
         </div>
-        <div id="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="icon-div animated delay-400ms fadeInUp">
+          <img class="circle" src="graphics/redCircle.svg" />
+          <a href="projects.html">
+            <img class="icon" id="coding-icon" src="graphics/coding-icon.svg" />
+          </a>
+          <figcaption class="caption">Projects</figcaption>
         </div>
+        <div class="icon-div animated delay-600ms fadeInUp">
+          <img class="circle" src="graphics/redCircle.svg" />
+          <a href="experience.html">
+            <img
+              class="icon"
+              id="experience-icon"
+              src="graphics/experience-icon.svg"
+            />
+          </a>
+          <figcaption class="caption">Experience</figcaption>
+        </div>
+      </div>
+      <div id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
     <h1 class="animated fadeInUp">HOBBIES</h1>
     <p class="animated fadeInRightBig" id="description">
-        <em>- outlets for my creativity</em>
+      <em>- outlets for my creativity</em>
     </p>
     <section id="guitar-section">
-        <div id="guitar-div" class="animated fadeInUpBig">
-            <img id="guitar" src="./graphics/guitar-upright.svg">
-        </div>
+      <div id="guitar-div" class="animated fadeInUpBig">
+        <img id="guitar" src="./graphics/guitar-upright.svg" />
+      </div>
 
-        <div id="guitar-text" class="animated fadeInUp delay-200ms">
-            <h3>Music</h3>
-            <p>My passion for music has driven me to improve my musical abilities so that I can turn my musical ideas
-                into
-                tangible creations.
-                <br>
-                <br> The guitar is my primary instrument, which I have played for 8 years; and currently I am taking
-                lessons
-                to improve my music theory on the guitar while continuing to practice techniques every day.
-            </p>
-        </div>
+      <div id="guitar-text" class="animated fadeInUp delay-200ms">
+        <h3>Music</h3>
+        <p>
+          My passion for music has driven me to improve my musical abilities so
+          that I can turn my musical ideas into tangible creations.
+          <br />
+          <br />
+          The guitar is my primary instrument, which I have played for 8 years;
+          and currently I am taking lessons to improve my music theory on the
+          guitar while continuing to practice techniques every day.
+        </p>
+      </div>
     </section>
     <section id="music-video-section" class="scroll fadeInRightBig">
-        <h4>My Music Videos:</h4>
-        <div class="horizontal-gallery-div">
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/uIp-KYEE3lk?rel=0&amp;showinfo=0&autohide=1"></iframe>
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/pglIk6tXs_0?rel=0&amp;showinfo=0&autohide=1"></iframe>
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/4EmJ9oP81js?rel=0&amp;showinfo=0&autohide=1"></iframe>
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/JhIlxU7x17s?rel=0&amp;showinfo=0&autohide=1"></iframe>
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/tkyCkXF4aQ4?rel=0&amp;showinfo=0&autohide=1"></iframe>
-            <iframe allowfullscreen
-                src="https://youtube.com/embed/bdnd0NvC_HE?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        </div>
+      <h4>My Music Videos:</h4>
+      <div class="horizontal-gallery-div">
+        <iframe
+          allowfullscreen
+          src="https://www.youtube.com/embed/B8zVt2b5fAg?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/uIp-KYEE3lk?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/pglIk6tXs_0?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://www.youtube.com/embed/FgdliUqu8CU?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://www.youtube.com/embed/PY7z-135gNc?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://www.youtube.com/embed/pq3OBJ_2Yg0?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/4EmJ9oP81js?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/JhIlxU7x17s?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/tkyCkXF4aQ4?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+        <iframe
+          allowfullscreen
+          src="https://youtube.com/embed/bdnd0NvC_HE?rel=0&amp;showinfo=0&autohide=1"
+        ></iframe>
+      </div>
     </section>
     <section class="photography">
-
-        <h3 class="scroll fadeInLeftBig">Photography</h3>
-        <div class="side-picture-div scroll fadeInLeftBig">
-            <img id="camera-icon" alt="camera" src="/graphics/camera.svg">
-        </div>
-        <div class="text scroll fadeInRightBig">
-            <p>I have taught myself photography and worked as a photographer for a local organization.</p>
-            <p class="lighter">For me, the art of photography is not only about the perfect composition and techniques -
-                it is also about the experience, the simple act of traveling and preserving the moments using a camera;
-                and
-                it is about the passion, the love for the world that drives so many artists to capture its beauty. </p>
-            <p>Here are some of my photographs: (click to enlarge)</p>
-        </div>
+      <h3 class="scroll fadeInLeftBig">Photography</h3>
+      <div class="side-picture-div scroll fadeInLeftBig">
+        <img id="camera-icon" alt="camera" src="/graphics/camera.svg" />
+      </div>
+      <div class="text scroll fadeInRightBig">
+        <p>
+          I have taught myself photography and worked as a photographer for a
+          local organization.
+        </p>
+        <p class="lighter">
+          For me, the art of photography is not only about the perfect
+          composition and techniques - it is also about the experience, the
+          simple act of traveling and preserving the moments using a camera; and
+          it is about the passion, the love for the world that drives so many
+          artists to capture its beauty.
+        </p>
+        <p>Here are some of my photographs: (click to enlarge)</p>
+      </div>
     </section>
-    <div class="horizontal-gallery-div picture scroll fadeInRightBig" id="photos-gallery" itemscope
-        itemtype="http://schema.org/ImageGallery">
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/fountain-bear.jpg" itemprop="contentUrl" data-size="2518x1678" data-index="0">
-                <img src="img/fountain-bear-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a teddy bear sitting in front of a fountain">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/cat.jpg" itemprop="contentUrl" data-size="2370x1580" data-index="1">
-                <img src="img/cat-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a cat sitting in the neighborhood">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/golf2.jpg" itemprop="contentUrl" data-size="2453x1634" data-index="2">
-                <img src="img/golf2-thumb.jpg" height="160" width="240" itemprop="thumbnail" alt="people playing golf">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/golf.jpg" itemprop="contentUrl" data-size="2453x1634" data-index="3">
-                <img src="img/golf-thumb.jpg" height="160" width="240" itemprop="thumbnail" alt="a person playing golf">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/bird.jpg" itemprop="contentUrl" data-size="2364x1580" data-index="4">
-                <img src="img/bird-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a white bird standing on a tree">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/water-bird.jpg" itemprop="contentUrl" data-size="2653x1490" data-index="5">
-                <img src="img/water-bird-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a duck swimming in the water">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/flying-bird.jpg" itemprop="contentUrl" data-size="1234x1190" data-index="6">
-                <img src="img/flying-bird-thumb.jpg" height="160" width="166" itemprop="thumbnail"
-                    alt="a bird flying in the sky">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/moon.jpg" itemprop="contentUrl" data-size="2694x1678" data-index="7">
-                <img src="img/moon-thumb.jpg" height="160" width="256" itemprop="thumbnail"
-                    alt="a moon in the night sky">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/building.jpg" itemprop="contentUrl" data-size="2575x1678" data-index="8">
-                <img src="img/building-thumb.jpg" height="160" width="245" itemprop="thumbnail"
-                    alt="a building in the evening">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/cup-cake.jpg" itemprop="contentUrl" data-size="2736x1539" data-index="9">
-                <img src="img/cup-cake-thumb.jpg" height="160" width="284" itemprop="thumbnail"
-                    alt="a cupcake among other cupcakes">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/campus-building.jpg" itemprop="contentUrl" data-size="2371x1580" data-index="10">
-                <img src="img/campus-building-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a campus building at night">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/standing-bird.jpg" itemprop="contentUrl" data-size="1844x1678" data-index="11">
-                <img src="img/standing-bird-thumb.jpg" height="160" width="175" itemprop="thumbnail"
-                    alt="a black bird standing on a post">
-            </a>
-        </figure>
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="img/dog.jpg" itemprop="contentUrl" data-size="2518x1678" data-index="12">
-                <img src="img/dog-thumb.jpg" height="160" width="240" itemprop="thumbnail"
-                    alt="a dog that I owned for 2 weeks">
-            </a>
-        </figure>
+    <div
+      class="horizontal-gallery-div picture scroll fadeInRightBig"
+      id="photos-gallery"
+      itemscope
+      itemtype="http://schema.org/ImageGallery"
+    >
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/fountain-bear.jpg"
+          itemprop="contentUrl"
+          data-size="2518x1678"
+          data-index="0"
+        >
+          <img
+            src="img/fountain-bear-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a teddy bear sitting in front of a fountain"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/cat.jpg"
+          itemprop="contentUrl"
+          data-size="2370x1580"
+          data-index="1"
+        >
+          <img
+            src="img/cat-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a cat sitting in the neighborhood"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/golf2.jpg"
+          itemprop="contentUrl"
+          data-size="2453x1634"
+          data-index="2"
+        >
+          <img
+            src="img/golf2-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="people playing golf"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/golf.jpg"
+          itemprop="contentUrl"
+          data-size="2453x1634"
+          data-index="3"
+        >
+          <img
+            src="img/golf-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a person playing golf"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/bird.jpg"
+          itemprop="contentUrl"
+          data-size="2364x1580"
+          data-index="4"
+        >
+          <img
+            src="img/bird-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a white bird standing on a tree"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/water-bird.jpg"
+          itemprop="contentUrl"
+          data-size="2653x1490"
+          data-index="5"
+        >
+          <img
+            src="img/water-bird-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a duck swimming in the water"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/flying-bird.jpg"
+          itemprop="contentUrl"
+          data-size="1234x1190"
+          data-index="6"
+        >
+          <img
+            src="img/flying-bird-thumb.jpg"
+            height="160"
+            width="166"
+            itemprop="thumbnail"
+            alt="a bird flying in the sky"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/moon.jpg"
+          itemprop="contentUrl"
+          data-size="2694x1678"
+          data-index="7"
+        >
+          <img
+            src="img/moon-thumb.jpg"
+            height="160"
+            width="256"
+            itemprop="thumbnail"
+            alt="a moon in the night sky"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/building.jpg"
+          itemprop="contentUrl"
+          data-size="2575x1678"
+          data-index="8"
+        >
+          <img
+            src="img/building-thumb.jpg"
+            height="160"
+            width="245"
+            itemprop="thumbnail"
+            alt="a building in the evening"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/cup-cake.jpg"
+          itemprop="contentUrl"
+          data-size="2736x1539"
+          data-index="9"
+        >
+          <img
+            src="img/cup-cake-thumb.jpg"
+            height="160"
+            width="284"
+            itemprop="thumbnail"
+            alt="a cupcake among other cupcakes"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/campus-building.jpg"
+          itemprop="contentUrl"
+          data-size="2371x1580"
+          data-index="10"
+        >
+          <img
+            src="img/campus-building-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a campus building at night"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/standing-bird.jpg"
+          itemprop="contentUrl"
+          data-size="1844x1678"
+          data-index="11"
+        >
+          <img
+            src="img/standing-bird-thumb.jpg"
+            height="160"
+            width="175"
+            itemprop="thumbnail"
+            alt="a black bird standing on a post"
+          />
+        </a>
+      </figure>
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+      >
+        <a
+          href="img/dog.jpg"
+          itemprop="contentUrl"
+          data-size="2518x1678"
+          data-index="12"
+        >
+          <img
+            src="img/dog-thumb.jpg"
+            height="160"
+            width="240"
+            itemprop="thumbnail"
+            alt="a dog that I owned for 2 weeks"
+          />
+        </a>
+      </figure>
     </div>
     <section class="cinematography">
-        <h3 class="scroll fadeInLeftBig">Cinematography</h3>
-        <div class="background"></div>
-        <div class="cinema-camera scroll fadeInRightBig">
-            <img alt="cinema camera" src="graphics/cinematography.svg">
-        </div>
-        <div class="text scroll fadeInLeftBig">
-            <p>I love expressing myself using my camera and editing software, and one of my short films (the first one
-                below) became a semi-finalist
-                in the UIL Film Festival.</p>
-            <p class="lighter">The screen is the canvas, the camera the brush; and my mind is the sole creator of this
-                splendid
-                painting. </p>
-            <p>Here are some of my video projects: </p>
-        </div>
+      <h3 class="scroll fadeInLeftBig">Cinematography</h3>
+      <div class="background"></div>
+      <div class="cinema-camera scroll fadeInRightBig">
+        <img alt="cinema camera" src="graphics/cinematography.svg" />
+      </div>
+      <div class="text scroll fadeInLeftBig">
+        <p>
+          I love expressing myself using my camera and editing software, and one
+          of my short films (the first one below) became a semi-finalist in the
+          UIL Film Festival.
+        </p>
+        <p class="lighter">
+          The screen is the canvas, the camera the brush; and my mind is the
+          sole creator of this splendid painting.
+        </p>
+        <p>Here are some of my video projects:</p>
+      </div>
     </section>
-    <div class="horizontal-gallery-div scroll fadeInRightBig" id="cinematography-gallery">
-        <iframe allowfullscreen src="https://youtube.com/embed/QHeruyWrt8M?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/zQxRERZGafI?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/Ks8041ce2-s?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/o7iZcI2QnJA?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/UQbU9xr_aQU?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/GhhQP0_KF7w?rel=0&amp;showinfo=0&autohide=1"></iframe>
-        <iframe allowfullscreen src="https://youtube.com/embed/ML2SIx2Zz78?rel=0&amp;showinfo=0&autohide=1"></iframe>
+    <div
+      class="horizontal-gallery-div scroll fadeInRightBig"
+      id="cinematography-gallery"
+    >
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/skzl2nVI24s?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/QHeruyWrt8M?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/zQxRERZGafI?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/Ks8041ce2-s?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/o7iZcI2QnJA?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/UQbU9xr_aQU?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/GhhQP0_KF7w?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
+      <iframe
+        allowfullscreen
+        src="https://youtube.com/embed/ML2SIx2Zz78?rel=0&amp;showinfo=0&autohide=1"
+      ></iframe>
     </div>
     <section class="photography graphics">
-
-        <h3 class="scroll fadeInLeftBig">Graphics Design</h3>
-        <div class="side-picture-div scroll slow fadeInLeftBig">
-            <img id="pen-icon" alt="camera" src="/graphics/pen-icon.svg">
+      <h3 class="scroll fadeInLeftBig">Graphics Design</h3>
+      <div class="side-picture-div scroll slow fadeInLeftBig">
+        <img id="pen-icon" alt="camera" src="/graphics/pen-icon.svg" />
+      </div>
+      <div class="text scroll fadeInRightBig">
+        <p>
+          Graphics designing and photo manipulation are not only fun but also
+          extremely useful, and I have employed these skills in many of my
+          projects, including this website.
+        </p>
+        <p class="lighter">
+          Some other projects that involve graphics designing:
+        </p>
+        <div
+          class="horizontal-gallery-div picture"
+          id="graphics-gallery"
+          itemscope
+          itemtype="http://schema.org/ImageGallery"
+        >
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/one.jpg"
+              itemprop="contentUrl"
+              data-size="1920 x 1080"
+              data-index="0"
+            >
+              <img
+                src="img/one-thumb.jpg"
+                height="160"
+                width="284"
+                itemprop="thumbnail"
+                alt="screenshot of web app"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/robotics.png"
+              itemprop="contentUrl"
+              data-size="3300x2550"
+              data-index="1"
+            >
+              <img
+                src="img/robotics-thumb.jpg"
+                height="160"
+                width="207"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            onclick="window.open('http://stevehan.x10host.com/intothewoods/')"
+            id="theater"
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/theater.jpg"
+              itemprop="contentUrl"
+              data-size="1791x1000"
+              data-index="2"
+            >
+              <img
+                src="img/theater-thumb.jpg"
+                height="160"
+                width="286"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/kaleidoscope.jpg"
+              itemprop="contentUrl"
+              data-size="611x1008"
+              data-index="3"
+            >
+              <img
+                src="img/kaleidoscope-thumb.jpg"
+                height="160"
+                width="96"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/tartuffe.jpg"
+              itemprop="contentUrl"
+              data-size="2163x1400"
+              data-index="4"
+            >
+              <img
+                src="img/tartuffe-thumb.jpg"
+                height="160"
+                width="247"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/wizard.jpg"
+              itemprop="contentUrl"
+              data-size="960x742"
+              data-index="5"
+            >
+              <img
+                src="img/wizard-thumb.jpg"
+                height="160"
+                width="207"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/midautumn.JPG"
+              itemprop="contentUrl"
+              data-size="1158x1500"
+              data-index="6"
+            >
+              <img
+                src="img/midautumn-thumb.jpg"
+                height="160"
+                width="123"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
+          <figure
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="http://schema.org/ImageObject"
+          >
+            <a
+              href="img/megazine.jpg"
+              itemprop="contentUrl"
+              data-size="1158x1500"
+              data-index="7"
+            >
+              <img
+                src="img/megazine-thumb.jpg"
+                height="160"
+                width="123"
+                itemprop="thumbnail"
+                alt="a teddy bear sitting in front of a fountain"
+              />
+            </a>
+          </figure>
         </div>
-        <div class="text scroll fadeInRightBig">
-            <p>Graphics designing and photo manipulation are not only fun but also extremely useful, and I have employed
-                these skills in many of my projects, including this website. </p>
-            <p class="lighter">Some other projects that involve graphics designing: </p>
-            <div class="horizontal-gallery-div picture" id="graphics-gallery" itemscope
-                itemtype="http://schema.org/ImageGallery">
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/one.jpg" itemprop="contentUrl" data-size="1920 x 1080" data-index="0">
-                        <img src="img/one-thumb.jpg" height="160" width="284" itemprop="thumbnail"
-                            alt="screenshot of web app">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/robotics.png" itemprop="contentUrl" data-size="3300x2550" data-index="1">
-                        <img src="img/robotics-thumb.jpg" height="160" width="207" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure onclick="window.open('http://stevehan.x10host.com/intothewoods/')" id="theater"
-                    itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/theater.jpg" itemprop="contentUrl" data-size="1791x1000" data-index="2">
-                        <img src="img/theater-thumb.jpg" height="160" width="286" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/kaleidoscope.jpg" itemprop="contentUrl" data-size="611x1008" data-index="3">
-                        <img src="img/kaleidoscope-thumb.jpg" height="160" width="96" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/tartuffe.jpg" itemprop="contentUrl" data-size="2163x1400" data-index="4">
-                        <img src="img/tartuffe-thumb.jpg" height="160" width="247" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/wizard.jpg" itemprop="contentUrl" data-size="960x742" data-index="5">
-                        <img src="img/wizard-thumb.jpg" height="160" width="207" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/midautumn.JPG" itemprop="contentUrl" data-size="1158x1500" data-index="6">
-                        <img src="img/midautumn-thumb.jpg" height="160" width="123" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="img/megazine.jpg" itemprop="contentUrl" data-size="1158x1500" data-index="7">
-                        <img src="img/megazine-thumb.jpg" height="160" width="123" itemprop="thumbnail"
-                            alt="a teddy bear sitting in front of a fountain">
-                    </a>
-                </figure>
-
-
-            </div>
-        </div>
+      </div>
     </section>
     <script>
-        (function () {
-            var menu = document.getElementById("mobile-menu"),
-                menuIcon = document.getElementById("menu-icon");
+      (function () {
+        var menu = document.getElementById('mobile-menu'),
+          menuIcon = document.getElementById('menu-icon');
 
-            menuIcon.addEventListener('click', function (e) {
-                menu.classList.toggle("active");
-                menuIcon.classList.toggle("open");
-                e.preventDefault();
-            });
-
-        })();
+        menuIcon.addEventListener('click', function (e) {
+          menu.classList.toggle('active');
+          menuIcon.classList.toggle('open');
+          e.preventDefault();
+        });
+      })();
     </script>
 
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
         </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="javascript/photoswipe/photoswipe.min.js"></script>
@@ -349,6 +743,5 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="javascript/scroll.js"></script>
-</body>
-
+  </body>
 </html>
