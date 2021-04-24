@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="static/main.css" />
+    <title>WebGL - Skinning</title>
+  </head>
+  <body>
+    <h1>Abode Flesh Animator Pro</h1>
+    <div class="container">
+      <canvas id="glCanvas" class="card" width="800" height="800">
+        Your browser does not support HTML5
+      </canvas>
+      <canvas id="textCanvas" width="800" height="800">
+        Your browser does not support HTML5
+      </canvas>
+    </div>
+    <br />
+    <section id="timeline">
+      <div id="timeline-bg">
+        <div id="ruler">
+          <div class="second-mark" v-for="s in seconds">{{ s }}s</div>
+        </div>
+        <div
+          v-for="k in keyframes"
+          class="keyframe"
+          v-bind:style="{left: k.time * 68 + 'px'}"
+          @mousedown="dragMouseDown($event, k.index)"
+        ></div>
+        <div id="playhead-container" v-bind:style="{left: playheadLeft + 'px'}">
+          <div id="playhead-head" @mousedown="dragMouseDown($event, -1)"></div>
+          <div id="playhead-line"></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="button" v-on:click="setKeyframe">
+          <div id="keyframe-icon"></div>
+        </div>
+        <div class="button" v-on:click="startPlayBack">
+          <div id="playback-icon"></div>
+        </div>
+      </div>
+    </section>
+
+    <ul class="instructions">
+      <li>Use keypad 0-8 to select skeletons.</li>
+      <li>Use WASD, up, and down to move the camera. Mouse drag to rotate.</li>
+      <li>
+        Move the playhead by dragging the upside-down triangle to select where
+        you want to place a keyframe.
+      </li>
+      <li>Manipute the skeleton by dragging the red lines.</li>
+      <li>
+        Click on the diamond button to capture the current pose as a key
+        frame.
+      </li>
+      <li>Click on the play button to play back the animation.</li>
+      <li>Drag the keyframe diamonds on the timeline to rearrange them.</li>
+    </ul>
+    <script type="module" src="./index.js"></script>
+
+    <br />
+  </body>
+</html>
