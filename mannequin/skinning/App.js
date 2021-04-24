@@ -440,17 +440,17 @@ export class SkinningAnimation extends CanvasAnimation {
       this.updateSkeletonState();
     }
     // draw the status message
-    if (this.ctx2) {
-      this.ctx2.clearRect(
-        0,
-        0,
-        this.ctx2.canvas.width,
-        this.ctx2.canvas.height
-      );
-      if (this.scene.meshes.length > 0) {
-        this.ctx2.fillText(this.getGUI().getModeString(), 50, 710);
-      }
-    }
+    // if (this.ctx2) {
+    //   this.ctx2.clearRect(
+    //     0,
+    //     0,
+    //     this.ctx2.canvas.width,
+    //     this.ctx2.canvas.height
+    //   );
+    //   if (this.scene.meshes.length > 0) {
+    //     this.ctx2.fillText(this.getGUI().getModeString(), 50, 710);
+    //   }
+    // }
     // Drawing
     const gl = this.ctx;
     const bg = this.backgroundColor;
@@ -463,10 +463,10 @@ export class SkinningAnimation extends CanvasAnimation {
     gl.bindFramebuffer(gl.FRAMEBUFFER, null); // null is the default frame buffer
     this.drawScene(0, 200, 800, 600);
     /* Draw status bar */
-    if (this.scene.meshes.length > 0) {
-      gl.viewport(0, 0, 800, 200);
-      this.sBackRenderPass.draw();
-    }
+    // if (this.scene.meshes.length > 0) {
+    //   gl.viewport(0, 0, 800, 200);
+    //   this.sBackRenderPass.draw();
+    // }
   }
   drawScene(x, y, width, height) {
     const gl = this.ctx;
@@ -476,7 +476,7 @@ export class SkinningAnimation extends CanvasAnimation {
     if (this.scene.meshes.length > 0) {
       this.sceneRenderPass.draw();
       gl.disable(gl.DEPTH_TEST);
-      this.skeletonRenderPass.draw();
+      if (vue.showSkeleton) this.skeletonRenderPass.draw();
       // TODO
       // Also draw the highlighted bone (if applicable)
       gl.enable(gl.DEPTH_TEST);

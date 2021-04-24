@@ -112,6 +112,9 @@ h1 {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  color: #eee;
+  align-items: center;
+  font-weight: bold;
 }
 
 .button {
@@ -163,13 +166,6 @@ h1 {
   grid-template-columns: repeat(auto-fill, minmax(4in, 1fr));
   grid-column-gap: var(--margins);
   grid-row-gap: var(--margins);
-}
-
-#test-view > ol > li {
-  margin-left: 0;
-}
-
-#test-view > ol > li:focus-within {
 }
 
 #test-view button {

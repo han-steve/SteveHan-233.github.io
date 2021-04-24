@@ -39,12 +39,15 @@
         <div class="button" v-on:click="startPlayBack">
           <div id="playback-icon"></div>
         </div>
+        <div class="button" v-on:click="showSkeleton = !showSkeleton">
+          Toggle Skeleton
+        </div>
       </div>
     </section>
 
     <ul class="instructions">
       <li>Use keypad 0-8 to select skeletons.</li>
-      <li>Use WASD, up, and down to move the camera. Mouse drag to rotate.</li>
+      <li>Use WASD, up, and down to move the camera. Left and right to roll. Drag to rotate.</li>
       <li>
         Move the playhead by dragging the upside-down triangle to select where
         you want to place a keyframe.

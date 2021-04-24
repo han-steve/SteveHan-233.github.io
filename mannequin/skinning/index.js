@@ -12,6 +12,7 @@ let app = new Vue({
         },
         playheadTime: 0,
         keyframes: [],
+        showSkeleton: true,
     },
     methods: {
         dragMouseDown: function (e, element) {
