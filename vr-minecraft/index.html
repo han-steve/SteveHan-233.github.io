@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>VoxCraft VR</title>
+    <meta
+      name="description"
+      content="VoxCraft VR - a minecraft demo made for VR"
+    />
+    <!-- <script src="../aframe.js"></script> -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="./utils/perlin.js"></script>
+    <script src="components/grab.js"></script>
+    <script src="components/controls.js"></script>
+    <script src="components/minecraft-texture.js"></script>
+    <script src="components/minecraft-hands.js"></script>
+    <script src="components/inventory.js"></script>
+    <script src="components/voxel-world.js"></script>
+    <script src="components/gravity.js"></script>
+    <script src="components/auto-jump.js"></script>
+    <script src="components/infinite-grid.js"></script>
+    <script src="components/block-manipulation.js"></script>
+    <script src="components/movement-mode.js"></script>
+    <script src="components/change-mode.js"></script>
+    <script src="components/cursor.js"></script>
+    <script src="shaders/skyGradient.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene
+      renderer="colorManagement: true;"
+      fog="type: linear; color: #888; far: 100; near: 30"
+    >
+      <a-assets>
+        <img id="cursorTexture" src="./assets/textures/cursor.png" />
+        <!-- <a-asset-item
+          id="zombie"
+          src="./assets/zombie/scene.gltf"
+        ></a-asset-item> -->
+        <a-asset-item
+          id="pickaxe-model"
+          src="./assets/pickaxe/scene.gltf"
+        ></a-asset-item>
+        <!-- <a-asset-item
+          id="bow-obj"
+          src="assets/models/bow-rotate-no-string.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="bow-mtl"
+          src="assets/models/bow-rotate-no-string.mtl"
+        ></a-asset-item>
+        <a-asset-item
+          id="arrow-obj"
+          src="assets/models/low-poly-arrow-rotated.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="arrow-mtl"
+          src="assets/models/low-poly-arrow.mtl"
+        ></a-asset-item> -->
+      </a-assets>
+
+      <!-- <a-entity class="cube" mixin="voxel"></a-entity> -->
+      <!-- Environment -->
+      <!-- <a-cylinder
+        id="ground"
+        src="#groundTexture"
+        radius="60"
+        height="0.1"
+      ></a-cylinder> -->
+
+      <!-- Zombie -->
+      <!-- <a-entity id="zombie" gltf-model="#zombie" scale="0.15 0.15 0.15"></a-entity> -->
+
+      <a-entity
+        id="sky"
+        geometry="primitive: sphere; radius: 600;"
+        material="shader: skyGradient; colorTop: #353449; colorBottom: #BC483E; side: back"
+        animation__colorTop="property: material.colorTop; type: color; to: #87ceff; dur: 60000; dir: alternate; loop: true"
+        animation__colorBot="property: material.colorBottom; type: color; to: #add8e6; dur: 60000; dir: alternate; loop: true"
+      ></a-entity>
+      <a-entity
+        id="world"
+        class="intersectable"
+        position="0, -20, 0"
+        voxel-world="centerCell: 0,0"
+        infinite-grid
+        block-manipulation
+      ></a-entity>
+      <!-- <a-entity
+        light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0"
+        position="-2.5 1.2 2.2"
+      ></a-entity>
+      <a-entity
+        light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0"
+        position="-20 -7 -40"
+      ></a-entity> -->
+      <a-entity
+        light="type: ambient; color: #f4f4f4; intensity: 0.05;"
+        position="-8 10 -18"
+        animation="property: light.intensity; to: .8; dur: 60000; dir: alternate; loop: true"
+      ></a-entity>
+      <a-plane
+        id="cursor"
+        material="src: #cursorTexture; transparent: true; side: double"
+        height=".3"
+        width=".3"
+      ></a-plane>
+      <!-- Hands -->
+      <a-entity
+        position="16 1.6 16"
+        id="camera-rig"
+        movement-controls
+        movement-mode="survival: true"
+      >
+        <a-entity id="camera" camera look-controls> </a-entity>
+        <a-entity id="left-hand" minecraft-hand="hand: left" minecraft-texture>
+          <a-entity id="inventory" inventory visible="true"></a-entity>
+        </a-entity>
+        <a-entity
+          id="right-hand"
+          raycaster="objects: .intersectable; far: 5; showLine: false"
+          minecraft-hand="hand: right"
+          change-mode
+          crawling-cursor
+          minecraft-texture
+        >
+          <a-entity
+            id="pickaxe"
+            gltf-model="#pickaxe-model"
+            scale="0.35 0.35 0.35"
+            position="-.07 0 -.2"
+            rotation="0 90 45"
+            visible="false"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
