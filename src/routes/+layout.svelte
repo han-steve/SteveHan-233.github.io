@@ -7,6 +7,6 @@
 
 <Header />
 
-<main in:fly={{y : 10, duration: 350}}>
+<main transition:fly={{y : 10, duration: 350}}>
 	<slot />
 </main>
