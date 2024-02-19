@@ -11,9 +11,9 @@
 	<div class="mt-5">
 		<p class="mb-1 text-neutral-500">Hi, I'm</p>
 		<h1 class="mb-1 text-4xl font-extrabold text-black"><a href="/">Steve Han.</a></h1>
-		<p class="text-neutral-800">
-			<span class="light">I'm a</span> software engineer<span class="light">,</span><br />
-			designer<span class="light">, and</span> researcher<span class="light">.</span>
+        <p class="text-neutral-800 text-base/5">
+			<span class="light">I'm a</span> machine learning engineer<span class="light">,</span><br />
+            full-stack developer<span class="light">, <br/>and</span> designer<span class="light">.</span>
 		</p>
 	</div>
 	<nav class="flex">
@@ -46,6 +46,7 @@
 		background: black;
 		transform: translateY(-170px);
         transition: all .35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 5px;
 	}
     .route {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile safari no gray box */
