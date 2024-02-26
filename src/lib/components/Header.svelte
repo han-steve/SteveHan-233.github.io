@@ -7,11 +7,12 @@
 	];
 </script>
 
-<header class="flex justify-between mb-5">
-	<div class="mt-5">
-		<p class="mb-1 text-neutral-500">Hi, I'm</p>
-		<h1 class="mb-1 text-4xl font-extrabold text-black"><a href="/">Steve Han.</a></h1>
-        <p class="text-neutral-800 text-base/5">
+<header class="flex justify-between mb-2">
+    <!--<div class="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-md"></div>-->
+	<div class="mt-5 mr-1 z-10 relative">
+		<p class="mb-1 light">Hi, I'm</p>
+		<h1 class="mb-1 text-4xl font-extrabold text-transparent bg-gradient-to-tr from-black from-20% to-70% to-neutral-700 dark:text-white bg-clip-text"><a href="/">Steve Han.</a></h1>
+        <p class="text-base/5">
 			<span class="light">I'm a</span> machine learning engineer<span class="light">,</span><br />
             full-stack developer<span class="light">, <br/>and</span> designer<span class="light">.</span>
 		</p>
@@ -20,7 +21,7 @@
 		{#each routes as route (route.name)}
 			<a
 				href={route.href}
-				class="route group relative block px-1 py-2 font-mono text-neutral-500 [letter-spacing:-.2em] [text-orientation:upright] [writing-mode:vertical-lr]"
+				class="route group relative block px-1 py-2 font-mono text-neutral-400 [letter-spacing:-.2em] [text-orientation:upright] [writing-mode:vertical-lr]"
 				class:selected={$page.url.pathname === route.href}
 				><span
 					class="text"
@@ -32,20 +33,18 @@
 </header>
 
 <style lang="postcss">
-	.light {
-		@apply text-neutral-500;
-	}
 	.route::before {
 		content: '';
 		display: block;
 		position: absolute;
-		bottom: 0;
 		left: 0;
 		right: 0;
 		top: 0;
-		background: black;
+        height: 9em;
+        background: rgb(0,0,0);
+        background: linear-gradient(45deg, rgba(0,0,0) 30%, rgba(64,64,64) 100%); /* black to neutral-700 */
 		transform: translateY(-170px);
-        transition: all .35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all .33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         border-radius: 5px;
 	}
     .route {
@@ -59,7 +58,7 @@
 	}
     .text {
         @apply relative block;
-        transition: color .5s ease 0s, transform .2s ease .24s;
+        transition: color .5s ease 0s, transform .25s ease .25s;
     }
 	.text-hover {
 		@apply group-hover:translate-y-3 group-hover:text-black delay-0;

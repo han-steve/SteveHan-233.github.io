@@ -7,7 +7,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     max-width: 800px;
     margin: auto;
-    @apply p-5 pt-5
+    @apply p-5 pt-5 dark:bg-zinc-900;
+}
+
+p {
+    @apply text-neutral-900 mb-5;
+}
+
+em {
+    @apply not-italic font-semibold;
 }
 
 @layer components {
@@ -15,6 +23,9 @@ body {
     @apply underline underline-offset-[3px] decoration-neutral-400 dark:decoration-neutral-500;
     @apply hover:text-black hover:decoration-black transition-colors;
     @apply dark:hover:text-white dark:hover:decoration-white;
+  }
+  .light {
+    @apply text-neutral-400;
   }
 }
 
