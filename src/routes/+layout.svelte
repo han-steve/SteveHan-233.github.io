@@ -11,7 +11,6 @@
 
 <Header />
 
-
 {#key data.pathname}
 <main in:fly={{y : 10, duration: 250, delay: 250}} out:fly={{y: 10, duration: 250}}>
 	<slot />
