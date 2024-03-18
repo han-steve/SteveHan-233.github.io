@@ -3,6 +3,7 @@
 	import { fade, blur, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
+	import ReplayIcon from '$lib/icons/ReplayIcon.svelte';
 
 	const routes = [
 		{ name: 'projects', href: '/projects' },
@@ -12,6 +13,7 @@
 	let animate = true;
 	let verticalCenter = false;
 	let enableTransition = false;
+	let lightenText = false;
 
 	const startAnimation = () => {
 		verticalCenter = true;
@@ -19,6 +21,9 @@
 		animate = false;
 		animate = true;
 		document.body.style.overflow = 'hidden';
+		setTimeout(() => {
+			lightenText = true;
+		}, 1500);
 		setTimeout(() => {
 			enableTransition = true;
 		}, 2000);
@@ -33,8 +38,8 @@
 	// if animation will run based on storage. If not, it sets the blur to 0 to show the full page.
 	// If yes, it keeps the full screen blur to prevent flash of text, and it sets
 	// skipAnimation to "AFTER_THIS".
-    // After hydration, the previous backdrop is removed, and the code decides to run animation based
-    // on the variable. 
+	// After hydration, the previous backdrop is removed, and the code decides to run animation based
+	// on the variable.
 	const handleHydrationAnimation = () => {
 		let backdrop = document.getElementById('backdrop');
 		backdrop?.parentNode?.removeChild(backdrop);
@@ -42,9 +47,9 @@
 		console.log(skipAnimation);
 		if (skipAnimation == 'AFTER_THIS') {
 			console.log('starting animation');
-			startAnimation();
 			localStorage.setItem('skipAnimation', 'TRUE');
 		}
+		startAnimation();
 	};
 
 	onMount(() => {
@@ -59,7 +64,7 @@
 				? 'transition-[top, translate] duration-1000'
 				: ''} {verticalCenter ? 'top-[50svh] translate-y-[-50%]' : 'top-0 translate-y-[0%]'}"
 		>
-			<p class="light mb-1 transition-colors">
+			<p class="mb-1 transition-colors duration-1000 {lightenText ? 'light' : 'text-neutral-700'}">
 				<span in:fade={{ delay: 400 }}>Hi,</span> <span in:fade={{ delay: 900 }}>I'm</span>
 			</p>
 			<h1
@@ -74,6 +79,35 @@
 					>.</span
 				>
 			</p>
+			<svg
+				width="20px"
+				height="20px"
+				viewBox="0 0 48 48"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M21 24V18L26 21L31 24L26 27L21 30V24Z"
+					fill="none"
+					stroke="#000000"
+					stroke-width="4"
+					stroke-linejoin="round"
+				/>
+				<path
+					d="M11.2721 36.7279C14.5294 39.9853 19.0294 42 24 42C33.9411 42 42 33.9411 42 24C42 14.0589 33.9411 6 24 6C19.0294 6 14.5294 8.01472 11.2721 11.2721C9.6141 12.9301 6 17 6 17"
+					stroke="#000000"
+					stroke-width="4"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+				<path
+					d="M6 9V17H14"
+					stroke="#000000"
+					stroke-width="4"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg>
 		</div>
 	{/if}
 	<nav class="z-1 flex">
