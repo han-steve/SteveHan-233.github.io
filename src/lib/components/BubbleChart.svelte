@@ -1,18 +1,19 @@
-<script context="module" lang="ts">
+<script lang="ts">
 export interface Technology {
     name: string;
     svg: string;
     proficiency: 1 | 2 | 3 | 4 | 5;
     description: string;
 }
-</script>
-
-<script lang="ts">
 import { onMount, onDestroy } from 'svelte';
 import { browser } from '$app/environment';
 import * as d3 from 'd3';
 
-export let technologies: Technology[] = [];
+    interface Props {
+        technologies?: Technology[];
+    }
+
+    let { technologies = [] }: Props = $props();
 
 // Scale factor for bubble sizes based on proficiency
 const BUBBLE_SIZE_SCALE = 10;
@@ -30,8 +31,8 @@ interface Node extends Technology, d3.SimulationNodeDatum {
     originalRadius?: number;
 }
 
-let svg: SVGElement;
-let container: HTMLDivElement;
+let svg: SVGElement = $state();
+let container: HTMLDivElement = $state();
 let width: number;
 let height = 350;
 let centerX: number;
@@ -47,23 +48,7 @@ let expandedNode: Node | null = null;
 let isDragging = false;
 let dragStartTime = 0;
 
-// Calculate the maximum radius for expanded state
-$: maxRadius = Math.max(...nodes.map(n => n.r)) * 1.5;
 
-// Convert technologies to nodes with sized based on proficiency
-$: nodes = technologies.map((tech, index) => ({
-    ...tech,
-    id: index,
-    r: tech.proficiency * BUBBLE_SIZE_SCALE,
-    x: 0,
-    y: 0,
-    vx: 0,
-    vy: 0,
-    fx: null,
-    fy: null,
-    isExpanded: false,
-    originalRadius: tech.proficiency * BUBBLE_SIZE_SCALE
-})) as Node[];
 
 // Handle scroll events with debouncing
 function handleScroll() {
@@ -460,6 +445,22 @@ onDestroy(() => {
     if (scrollTimeout) clearTimeout(scrollTimeout);
     if (simulation) simulation.stop();
 });
+// Convert technologies to nodes with sized based on proficiency
+let nodes = $derived(technologies.map((tech, index) => ({
+    ...tech,
+    id: index,
+    r: tech.proficiency * BUBBLE_SIZE_SCALE,
+    x: 0,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    fx: null,
+    fy: null,
+    isExpanded: false,
+    originalRadius: tech.proficiency * BUBBLE_SIZE_SCALE
+})) as Node[]);
+// Calculate the maximum radius for expanded state
+let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
 </script>
 
 <div class="bubble-chart" bind:this={container}>

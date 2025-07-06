@@ -1,7 +1,11 @@
 <script lang="ts">
-  export let title: string;
-  export let description: string;
-  export let imagePath: string;
+  interface Props {
+    title: string;
+    description: string;
+    imagePath: string;
+  }
+
+  let { title, description, imagePath }: Props = $props();
 </script>
 
 <div class="flex items-start gap-4 mb-8">

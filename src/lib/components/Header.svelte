@@ -9,16 +9,20 @@
 		{ name: 'cv', href: '/cv' }
 	];
 
-	let animate = true;
-	let verticalCenter = false;
-	let enableTransition = false;
-	let lightenText = false;
+	let animate = $state(true);
+	let verticalCenter = $state(false);
+	let enableTransition = $state(false);
+	let lightenText = $state(false);
 
 	const startAnimation = () => {
 		verticalCenter = true;
 		// toggle animation to false to true to trigger entrance transition
-		animate = false;
-		animate = true;
+		setTimeout(() => {
+			animate = false;
+		}, 1);
+		setTimeout(() => {
+			animate = true;
+		}, 2);
 		document.body.style.overflow = 'hidden';
 		setTimeout(() => {
 			lightenText = true;
@@ -44,7 +48,8 @@
 		backdrop?.parentNode?.removeChild(backdrop);
 		const skipAnimation = localStorage.getItem('skipAnimation');
 		console.log(skipAnimation);
-		if (skipAnimation == 'AFTER_THIS') {
+		// if (skipAnimation == 'AFTER_THIS') {
+		if (true) {
 			console.log('starting animation');
 			localStorage.setItem('skipAnimation', 'TRUE');
 			startAnimation();
@@ -83,7 +88,7 @@
 				full-stack developer<span class="light">, <br />and</span> designer<span class="light"
 					>.</span
 				>
-				<button on:click={handleReplayAnimation}>
+				<button onclick={handleReplayAnimation} aria-label="Replay entrance animation">
 					<svg
 						width="15px"
 						height="15px"
@@ -135,9 +140,9 @@
 		<div
 			out:blur={{ duration: 500, delay: 500 }}
 			class="absolute bottom-0 left-0 right-0 top-0 backdrop-blur-2xl"
-		/>
+		></div>
 	{/if}
-	<div class="absolute bottom-0 left-0 right-0 top-0 z-20 backdrop-blur-2xl" id="backdrop" />
+	<div class="absolute bottom-0 left-0 right-0 top-0 z-20 backdrop-blur-2xl" id="backdrop"></div>
 	<script>
 		// Putting script here to be included in the prerendered page - before hydration.
 		// This way, the code runs immediately as the content is shown.
