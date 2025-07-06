@@ -48,8 +48,7 @@
 		backdrop?.parentNode?.removeChild(backdrop);
 		const skipAnimation = localStorage.getItem('skipAnimation');
 		console.log(skipAnimation);
-		// if (skipAnimation == 'AFTER_THIS') {
-		if (true) {
+		if (skipAnimation == 'AFTER_THIS') {
 			console.log('starting animation');
 			localStorage.setItem('skipAnimation', 'TRUE');
 			startAnimation();

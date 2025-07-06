@@ -34,9 +34,9 @@ interface Node extends Technology, d3.SimulationNodeDatum {
 let svg: SVGElement = $state();
 let container: HTMLDivElement = $state();
 let width: number;
-let height = 350;
+let height = 400;
 let centerX: number;
-let centerY: number;
+let centerY = height * 0.5;
 let simulation: d3.Simulation<Node, undefined>;
 let lastScrollY = 0;
 let scrollVelocity = 0;
@@ -47,8 +47,8 @@ let hasAnimated = false;
 let expandedNode: Node | null = null;
 let isDragging = false;
 let dragStartTime = 0;
-
-
+const paddingX = 10;
+const paddingY = 50;
 
 // Handle scroll events with debouncing
 function handleScroll() {
@@ -94,7 +94,8 @@ function debouncedScroll() {
 function initializeSimulation() {
     if (!browser || !container || nodes.length === 0) return;
 
-    width = container.clientWidth;
+    // Use viewport width for the simulation area
+    width = window.innerWidth;
     centerX = width * 0.5;
     centerY = height * 0.5;
 
@@ -126,8 +127,6 @@ function initializeSimulation() {
         node.vy = 0;
     });
 
-    const padding = 3;
-
     simulation = d3.forceSimulation(nodes)
         .force('charge', d3.forceManyBody().strength(-70)) // Reduced repulsion
         .force('collide', d3.forceCollide<Node>(d => d.r + 2).strength(0.9)) // Reduced padding, increased strength
@@ -135,10 +134,10 @@ function initializeSimulation() {
         .force('y', d3.forceY(centerY).strength(0.07)) // Slightly increased center pull
         .force('bounds', () => {
             nodes.forEach(d => {
-                if (d.x - d.r < padding) d.x = d.r + padding;
-                if (d.x + d.r > width - padding) d.x = width - d.r - padding;
-                if (d.y - d.r < padding) d.y = d.r + padding;
-                if (d.y + d.r > height - padding) d.y = height - d.r - padding;
+                if (d.x - d.r < paddingX) d.x = d.r + paddingX;
+                if (d.x + d.r > width - paddingX) d.x = width - d.r - paddingX;
+                if (d.y - d.r < paddingY) d.y = d.r + paddingY;
+                if (d.y + d.r > height - paddingY) d.y = height - d.r - paddingY;
             });
         })
         .alphaDecay(0.02); // Keep the same decay for smooth animation
@@ -406,6 +405,27 @@ onMount(() => {
     initializeSimulation();
     window.addEventListener('scroll', debouncedScroll, { passive: true });
 
+    // Add resize handler
+    const handleResize = () => {
+        width = window.innerWidth;
+        centerX = width * 0.5;
+        
+        // Update SVG viewBox
+        if (svg) {
+            d3.select(svg)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet');
+        }
+
+        // Update simulation bounds and restart
+        if (simulation) {
+            simulation.force('x', d3.forceX(centerX).strength(0.07));
+            simulation.alpha(0.3).restart();
+        }
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
+
     // Set up intersection observer
     const observer = new IntersectionObserver(
         (entries) => {
@@ -434,6 +454,7 @@ onMount(() => {
     return () => {
         observer.disconnect();
         window.removeEventListener('scroll', debouncedScroll);
+        window.removeEventListener('resize', handleResize);
         if (scrollTimeout) clearTimeout(scrollTimeout);
         if (simulation) simulation.stop();
     };
@@ -463,19 +484,42 @@ let nodes = $derived(technologies.map((tech, index) => ({
 let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
 </script>
 
-<div class="bubble-chart" bind:this={container}>
-    <svg 
-        bind:this={svg}
-        width="100%" 
-        {height}
-        style="background-color: white;"
-    ></svg>
+<div class="bubble-chart-container">
+    <div class="bubble-chart-wrapper">
+        <div class="bubble-chart" bind:this={container}>
+            <svg 
+                bind:this={svg}
+                width="100%" 
+                {height}
+                style="background-color: transparent;"
+            ></svg>
+        </div>
+    </div>
 </div>
 
 <style>
+.bubble-chart-container {
+    position: relative;
+    margin: -50px -50vw;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    width: 100vw;
+}
+
+.bubble-chart-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
 .bubble-chart {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 :global(.node) {
