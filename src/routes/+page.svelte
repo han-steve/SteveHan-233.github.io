@@ -1,7 +1,6 @@
 <script lang="ts">
 	import BubbleChart, { type Technology } from '$lib/components/BubbleChart.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	let bubbleChart: BubbleChart;
 
 	const technologies = [
 		{
@@ -143,7 +142,7 @@
 	proficiency.
 </p>
 <div>
-	<BubbleChart bind:this={bubbleChart} {technologies} />
+	<BubbleChart {technologies} />
 </div>
 
 <p>
