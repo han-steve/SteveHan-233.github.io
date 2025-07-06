@@ -3,7 +3,6 @@
 	import { fade, blur, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
-	import ReplayIcon from '$lib/icons/ReplayIcon.svelte';
 
 	const routes = [
 		{ name: 'projects', href: '/projects' },
