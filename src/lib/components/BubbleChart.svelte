@@ -2,8 +2,10 @@
 export interface Technology {
     name: string;
     svg: string;
-    proficiency: 1 | 2 | 3 | 4 | 5;
+    proficiency: 1.5 | 2 | 3 | 4 | 5;
     description: string;
+    type: 'infra' | 'framework' | 'language';
+    padding?: number; // 0-1, percentage of radius to use as padding
 }
 import { onMount, onDestroy } from 'svelte';
 import { browser } from '$app/environment';
@@ -34,10 +36,10 @@ interface Node extends Technology, d3.SimulationNodeDatum {
 
 let svg: SVGElement | undefined = $state();
 let container: HTMLDivElement | undefined = $state();
-let width: number;
-let height = 400;
-let centerX: number;
-let centerY = height * 0.5;
+let width = $state(browser ? window.innerWidth : 1024); // Default width for SSR
+let height = $derived(width < 768 ? 500 : 400);
+let centerX = $derived(width * 0.5);
+let centerY = $derived(height * 0.5);
 let simulation: d3.Simulation<Node, undefined>;
 let lastScrollY = 0;
 let scrollVelocity = 0;
@@ -102,6 +104,38 @@ function debouncedScroll() {
     requestAnimationFrame(handleScroll);
 }
 
+// Define cluster centers based on screen size
+function getClusterCenters() {
+    const isMobile = width < 768; // Standard mobile breakpoint
+    const types = ['infra', 'framework', 'language'] as const;
+    const maxContentWidth = 800; // Maximum content width
+    
+    if (isMobile) {
+        // Single center for mobile
+        return types.reduce((acc, type) => {
+            acc[type] = {
+                x: width / 2,
+                y: height / 2
+            };
+            return acc;
+        }, {} as Record<typeof types[number], {x: number, y: number}>);
+    } else {
+        // Horizontal arrangement for desktop - spread out more
+        const effectiveWidth = Math.min(width, maxContentWidth); // Use maxContentWidth as the limit
+        const totalWidth = effectiveWidth * 0.5; // Use 50% of the width for more spread out layout
+        const horizontalSpacing = totalWidth / (types.length - 1); // Space between clusters
+        const startX = (width - totalWidth) / 2; // Center the cluster group in the viewport
+        
+        return types.reduce((acc, type, i) => {
+            acc[type] = {
+                x: startX + horizontalSpacing * i,
+                y: height / 2
+            };
+            return acc;
+        }, {} as Record<typeof types[number], {x: number, y: number}>);
+    }
+}
+
 function initializeSimulation() {
     if (!browser || !container || nodes.length === 0) return;
 
@@ -110,10 +144,13 @@ function initializeSimulation() {
     centerX = width * 0.5;
     centerY = height * 0.5;
 
+    // Get cluster centers based on current screen size
+    const clusterCenters = getClusterCenters();
+
     // Initialize positions before creating nodes
     nodes.forEach(node => {
         const angle = Math.random() * Math.PI * 2;
-        const distance = Math.max(width, height) * 5; 
+        const distance = Math.max(width, height, 1000) * 3;
         const side = Math.floor(Math.random() * 4);
         
         switch(side) {
@@ -139,10 +176,10 @@ function initializeSimulation() {
     });
 
     simulation = d3.forceSimulation(nodes)
-        .force('charge', d3.forceManyBody().strength(-70)) // Reduced repulsion
-        .force('collide', d3.forceCollide<Node>(d => d.r + 2).strength(0.9)) // Reduced padding, increased strength
-        .force('x', d3.forceX(centerX).strength(0.07)) // Slightly increased center pull
-        .force('y', d3.forceY(centerY).strength(0.07)) // Slightly increased center pull
+        .force('charge', d3.forceManyBody().strength(-70))
+        .force('collide', d3.forceCollide<Node>(d => d.r + 2).strength(0.9))
+        .force('x', d3.forceX<Node>(d => clusterCenters[d.type].x).strength(0.08))
+        .force('y', d3.forceY<Node>(d => clusterCenters[d.type].y).strength(0.08))
         .force('bounds', () => {
             nodes.forEach(d => {
                 if (d.x - d.r < paddingX) d.x = d.r + paddingX;
@@ -151,7 +188,7 @@ function initializeSimulation() {
                 if (d.y + d.r > height - paddingY) d.y = height - d.r - paddingY;
             });
         })
-        .alphaDecay(0.02); // Keep the same decay for smooth animation
+        .alphaDecay(0.02);
 
     simulation.stop();
 
@@ -273,10 +310,22 @@ function initializeSimulation() {
     node.append('svg:image')
         .attr('class', 'tech-icon')
         .attr('xlink:href', d => d.svg)
-        .attr('x', d => -d.r * 0.7)
-        .attr('y', d => -d.r * 0.7)
-        .attr('width', d => d.r * 1.4)
-        .attr('height', d => d.r * 1.4)
+        .attr('x', d => {
+            const padding = (d.padding ?? 0.3) * d.r; // Default padding is 30% of radius
+            return -d.r + padding;
+        })
+        .attr('y', d => {
+            const padding = (d.padding ?? 0.3) * d.r;
+            return -d.r + padding;
+        })
+        .attr('width', d => {
+            const padding = (d.padding ?? 0.3) * d.r * 2;
+            return d.r * 2 - padding;
+        })
+        .attr('height', d => {
+            const padding = (d.padding ?? 0.3) * d.r * 2;
+            return d.r * 2 - padding;
+        })
         .style('pointer-events', 'none');
 
     // Add text group (initially hidden)
@@ -288,7 +337,7 @@ function initializeSimulation() {
     // Add name text
     textGroup.append('text')
         .attr('class', 'name-text')
-        .attr('dy', '-1.5em')
+        .attr('dy', '-3em')
         .attr('text-anchor', 'middle')
         .style('fill', 'white')
         .style('font-size', '14px')
@@ -298,14 +347,13 @@ function initializeSimulation() {
     // Add description text with wrapping
     textGroup.append('text')
         .attr('class', 'desc-text')
-        .attr('dy', '0.5em')
         .attr('text-anchor', 'middle')
         .style('fill', 'white')
         .style('font-size', '12px')
         .each(function(d) {
             const text = d3.select(this);
             const words = d.description.split(' ');
-            const lineHeight = 1.2;
+            const lineHeight = 1.1;
             const maxWidth = maxRadius * 1.4;
             let currentLine: string[] = [];
             let lineNumber = 0;
@@ -322,33 +370,29 @@ function initializeSimulation() {
                 return width;
             }
 
-            // Process each word
-            words.forEach((word, i) => {
-                currentLine.push(word);
-                const currentText = currentLine.join(' ');
+            // Calculate lines
+            const lines: string[] = [];
+            let tempLine: string[] = [];
+            words.forEach((word) => {
+                tempLine.push(word);
+                const currentText = tempLine.join(' ');
                 const lineWidth = getLineWidth(currentText);
 
-                // If adding this word makes the line too wide
-                if (lineWidth > maxWidth && currentLine.length > 1) {
-                    // Add the line without the current word
-                    const previousLine = currentLine.slice(0, -1).join(' ');
-                    text.append('tspan')
-                        .attr('x', 0)
-                        .attr('dy', lineNumber === 0 ? 0 : `${lineHeight}em`)
-                        .text(previousLine);
-
-                    // Start new line with current word
-                    currentLine = [word];
-                    lineNumber++;
+                if (lineWidth > maxWidth && tempLine.length > 1) {
+                    lines.push(tempLine.slice(0, -1).join(' '));
+                    tempLine = [word];
                 }
+            });
+            if (tempLine.length > 0) {
+                lines.push(tempLine.join(' '));
+            }
 
-                // If this is the last word, add whatever is left
-                if (i === words.length - 1) {
-                    text.append('tspan')
-                        .attr('x', 0)
-                        .attr('dy', lineNumber === 0 ? 0 : `${lineHeight}em`)
-                        .text(currentLine.join(' '));
-                }
+            // Add lines starting from a fixed position near the top
+            lines.forEach((line, i) => {
+                text.append('tspan')
+                    .attr('x', 0)
+                    .attr('dy', i === 0 ? '-1em' : lineHeight + 'em')
+                    .text(line);
             });
         });
 
@@ -358,12 +402,24 @@ function initializeSimulation() {
     simulation.on('tick', () => {
         node.attr('transform', d => `translate(${d.x},${d.y})`);
         
-        // Update icon and text positions
+        // Update icon positions
         node.selectAll<SVGImageElement, Node>('.tech-icon')
-            .attr('x', d => -d.r * 0.7)
-            .attr('y', d => -d.r * 0.7)
-            .attr('width', d => d.r * 1.4)
-            .attr('height', d => d.r * 1.4);
+            .attr('x', d => {
+                const padding = (d.padding ?? 0.3) * d.r;
+                return -d.r + padding;
+            })
+            .attr('y', d => {
+                const padding = (d.padding ?? 0.3) * d.r;
+                return -d.r + padding;
+            })
+            .attr('width', d => {
+                const padding = (d.padding ?? 0.3) * d.r * 2;
+                return d.r * 2 - padding;
+            })
+            .attr('height', d => {
+                const padding = (d.padding ?? 0.3) * d.r * 2;
+                return d.r * 2 - padding;
+            });
     });
 }
 
@@ -429,10 +485,14 @@ onMount(() => {
                 .attr('preserveAspectRatio', 'xMidYMid meet');
         }
 
-        // Update simulation bounds and restart
+        // Update cluster centers and forces
         if (simulation) {
-            simulation.force('x', d3.forceX(centerX).strength(0.05));
-            simulation.alpha(0.3).restart();
+            const newClusterCenters = getClusterCenters();
+            simulation
+                .force('x', d3.forceX<Node>(d => newClusterCenters[d.type].x).strength(0.05))
+                .force('y', d3.forceY<Node>(d => newClusterCenters[d.type].y).strength(0.05))
+                .alpha(0.3)
+                .restart();
         }
     };
 
@@ -496,7 +556,7 @@ let nodes = $derived(technologies.map((tech, index) => ({
     originalRadius: tech.proficiency * BUBBLE_SIZE_SCALE
 })) as Node[]);
 // Calculate the maximum radius for expanded state
-let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
+let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
 </script>
 
 <div class="bubble-chart-container">
@@ -516,13 +576,19 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
 .bubble-chart-container {
     position: relative;
     margin: -50px -50vw;
-    height: 400px;
+    height: var(--chart-height, 400px);
     overflow: hidden;
     display: flex;
     align-items: center;
     left: 50%;
     width: 100vw;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .bubble-chart-container {
+        --chart-height: 500px;
+    }
 }
 
 .bubble-chart-wrapper {

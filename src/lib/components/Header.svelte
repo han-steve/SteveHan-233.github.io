@@ -73,7 +73,7 @@
 	});
 </script>
 
-<header class="mb-2 flex justify-between" data-sveltekit-preload-code="eager">
+<header class="mb-2 flex justify-between lg:mt-20" data-sveltekit-preload-code="eager">
 	{#if animate}
 		<div
 			class="relative z-10 mr-1 {enableTransition
@@ -90,7 +90,7 @@
 				<a href="/">Steve Han.</a>
 			</h1>
 			<p in:fly={{ y: 10, delay: 2000, easing: cubicOut, duration: 500 }} class="text-base/5">
-				<span class="light">I'm a</span> machine learning engineer<span class="light">,</span><br />
+				<span class="light">I'm a</span> software engineer<span class="light">,</span><br />
 				full-stack developer<span class="light">, <br />and</span> designer<span class="light"
 					>.</span
 				>
@@ -181,15 +181,19 @@
 		transform: translateY(-170px);
 		transition: all 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		border-radius: 5px;
+		opacity: 0;
 	}
 	.route {
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile safari no gray box */
+		opacity: 1;
 	}
 	.selected {
 		@apply text-white;
+		opacity: 1;
 	}
 	.selected:before {
 		transform: translateY(0);
+		opacity: 1;
 	}
 	.text {
 		@apply relative block;
