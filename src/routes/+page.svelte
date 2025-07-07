@@ -20,7 +20,7 @@
 		{
 			name: 'AWS',
 			svg: '/assets/icons/aws.svg',
-			proficiency: 4 as const,
+			proficiency: 5 as const,
 			description:
 				'Certified developer, 3 YoE with DynamoDB, S3, EKS, ELB, Lambda, CloudFormation and more',
 			type: 'infra',
@@ -71,14 +71,14 @@
 		{
 			name: 'Vue',
 			svg: '/assets/icons/vue.svg',
-			proficiency: 1.5 as const,
+			proficiency: 2 as const,
 			description: 'Frontend framework',
 			type: 'framework'
 		},
 		{
 			name: 'React',
 			svg: '/assets/icons/react.svg',
-			proficiency: 4 as const,
+			proficiency: 5 as const,
 			description: 'Frontend framework',
 			type: 'framework'
 		},
@@ -92,7 +92,7 @@
 		{
 			name: 'Expo',
 			svg: '/assets/icons/expo.svg',
-			proficiency: 2 as const,
+			proficiency: 3 as const,
 			description: 'Frontend framework',
 			type: 'framework',
 			padding: 0.4
@@ -152,7 +152,7 @@
 		{
 			name: 'Go',
 			svg: '/assets/icons/go.svg',
-			proficiency: 4 as const,
+			proficiency: 5 as const,
 			description: 'Programming language',
 			type: 'language'
 		}

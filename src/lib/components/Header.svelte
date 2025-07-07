@@ -78,7 +78,7 @@
 		<div
 			class="relative z-10 mr-1 {enableTransition
 				? 'transition-[top, translate] duration-1000'
-				: ''} {verticalCenter ? 'top-[50svh] translate-y-[-50%]' : 'top-0 translate-y-[0%]'}"
+				: ''} {verticalCenter ? 'top-[50svh] translate-y-[-50%] lg:top-[calc(50svh-5rem)]' : 'top-0 translate-y-[0%]'}"
 		>
 			<p class="mb-1 transition-colors duration-1000 {lightenText ? 'light' : 'text-neutral-700'}">
 				<span in:fade={{ delay: 400 }}>Hi,</span> <span in:fade={{ delay: 900 }}>I'm</span>

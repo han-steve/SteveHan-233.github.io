@@ -111,12 +111,31 @@ function getClusterCenters() {
     const maxContentWidth = 800; // Maximum content width
     
     if (isMobile) {
-        // Single center for mobile
-        return types.reduce((acc, type) => {
-            acc[type] = {
-                x: width / 2,
-                y: height / 2
-            };
+        // Triangle arrangement for mobile - very compact
+        const verticalSpacing = height * 0.1; // Reduced from 0.15
+        const horizontalSpacing = width * 0.1; // Reduced from 0.2
+        
+        return types.reduce((acc, type, i) => {
+            switch(i) {
+                case 0: // Top center
+                    acc[type] = {
+                        x: width / 2,
+                        y: height * 0.43 // Moved down from 0.4
+                    };
+                    break;
+                case 1: // Bottom left
+                    acc[type] = {
+                        x: width / 2 - horizontalSpacing,
+                        y: height * 0.57 // Moved up from 0.6
+                    };
+                    break;
+                case 2: // Bottom right
+                    acc[type] = {
+                        x: width / 2 + horizontalSpacing,
+                        y: height * 0.57 // Moved up from 0.6
+                    };
+                    break;
+            }
             return acc;
         }, {} as Record<typeof types[number], {x: number, y: number}>);
     } else {
@@ -489,8 +508,8 @@ onMount(() => {
         if (simulation) {
             const newClusterCenters = getClusterCenters();
             simulation
-                .force('x', d3.forceX<Node>(d => newClusterCenters[d.type].x).strength(0.05))
-                .force('y', d3.forceY<Node>(d => newClusterCenters[d.type].y).strength(0.05))
+                .force('x', d3.forceX<Node>(d => newClusterCenters[d.type].x).strength(0.08))
+                .force('y', d3.forceY<Node>(d => newClusterCenters[d.type].y).strength(0.08))
                 .alpha(0.3)
                 .restart();
         }
@@ -576,7 +595,7 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
 .bubble-chart-container {
     position: relative;
     margin: -50px -50vw;
-    height: var(--chart-height, 400px);
+    height: var(--chart-height, 500px);
     overflow: hidden;
     display: flex;
     align-items: center;
