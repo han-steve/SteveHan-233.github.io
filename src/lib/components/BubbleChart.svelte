@@ -8,6 +8,7 @@ export interface Technology {
 import { onMount, onDestroy } from 'svelte';
 import { browser } from '$app/environment';
 import * as d3 from 'd3';
+import { headerAnimationComplete } from '../stores';
 
     interface Props {
         technologies?: Technology[];
@@ -31,8 +32,8 @@ interface Node extends Technology, d3.SimulationNodeDatum {
     originalRadius?: number;
 }
 
-let svg: SVGElement = $state();
-let container: HTMLDivElement = $state();
+let svg: SVGElement | undefined = $state();
+let container: HTMLDivElement | undefined = $state();
 let width: number;
 let height = 400;
 let centerX: number;
@@ -47,8 +48,18 @@ let hasAnimated = false;
 let expandedNode: Node | null = null;
 let isDragging = false;
 let dragStartTime = 0;
+let headerAnimationDone = $state(false);
 const paddingX = 10;
 const paddingY = 50;
+
+// Subscribe to the header animation state
+headerAnimationComplete.subscribe(value => {
+    headerAnimationDone = value;
+    if (headerAnimationDone && isVisible && !hasAnimated) {
+        startAnimation();
+        hasAnimated = true;
+    }
+});
 
 // Handle scroll events with debouncing
 function handleScroll() {
@@ -102,7 +113,7 @@ function initializeSimulation() {
     // Initialize positions before creating nodes
     nodes.forEach(node => {
         const angle = Math.random() * Math.PI * 2;
-        const distance = Math.max(width, height) * 1.5;
+        const distance = Math.max(width, height) * 5; 
         const side = Math.floor(Math.random() * 4);
         
         switch(side) {
@@ -144,7 +155,8 @@ function initializeSimulation() {
 
     simulation.stop();
 
-    const svgElement = d3.select(svg);
+    const svgElement = svg ? d3.select(svg) : null;
+    if (!svgElement) return;
     
     svgElement.attr('viewBox', `0 0 ${width} ${height}`)
              .attr('preserveAspectRatio', 'xMidYMid meet');
@@ -362,25 +374,25 @@ export function startAnimation() {
     // Reset node positions and velocities
     nodes.forEach(node => {
         const angle = Math.random() * Math.PI * 2;
-        const distance = Math.max(width, height) * 1.5;
+        const distance = Math.max(width, height, 1000) * 3; // 1000 is used for mobile devices to have a more dramatic effect
         const side = Math.floor(Math.random() * 4);
         
         switch(side) {
             case 0: // top
-                node.x = Math.random() * width;
+                node.x = Math.random() * width; // Spread horizontally
                 node.y = -distance;
                 break;
             case 1: // right
                 node.x = width + distance;
-                node.y = Math.random() * height;
+                node.y = Math.random() * height; // Spread vertically
                 break;
             case 2: // bottom
-                node.x = Math.random() * width;
+                node.x = Math.random() * width; // Spread horizontally
                 node.y = height + distance;
                 break;
             case 3: // left
                 node.x = -distance;
-                node.y = Math.random() * height;
+                node.y = Math.random() * height; // Spread vertically
                 break;
         }
         node.vx = 0;
@@ -419,7 +431,7 @@ onMount(() => {
 
         // Update simulation bounds and restart
         if (simulation) {
-            simulation.force('x', d3.forceX(centerX).strength(0.07));
+            simulation.force('x', d3.forceX(centerX).strength(0.05));
             simulation.alpha(0.3).restart();
         }
     };
@@ -430,10 +442,13 @@ onMount(() => {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    startAnimation();
-                    hasAnimated = true;
-                    observer.disconnect(); // Only trigger once
+                if (entry.isIntersecting) {
+                    isVisible = true;
+                    if (headerAnimationDone && !hasAnimated) {
+                        startAnimation();
+                        hasAnimated = true;
+                        observer.disconnect(); // Only trigger once
+                    }
                 }
             });
         },

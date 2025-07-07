@@ -3,6 +3,7 @@
 	import { fade, blur, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
+	import { headerAnimationComplete } from '../stores';
 
 	const routes = [
 		{ name: 'projects', href: '/projects' },
@@ -34,6 +35,9 @@
 			verticalCenter = false;
 			document.body.style.overflow = 'auto';
 		}, 3000);
+		setTimeout(() => {
+			headerAnimationComplete.set(true);
+		}, 3600);
 	};
 
 	// Bear with me - this is very hacky. It's meant to solve flash of ugliness.
@@ -52,6 +56,9 @@
 			console.log('starting animation');
 			localStorage.setItem('skipAnimation', 'TRUE');
 			startAnimation();
+		} else {
+			// If we're not running the animation, immediately set header as complete
+			headerAnimationComplete.set(true);
 		}
 	};
 
