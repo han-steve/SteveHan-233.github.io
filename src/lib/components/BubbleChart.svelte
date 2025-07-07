@@ -507,12 +507,12 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
     align-items: center;
     left: 50%;
     width: 100vw;
+    pointer-events: none;
 }
 
 .bubble-chart-wrapper {
     position: relative;
     width: 100%;
-    z-index: 1;
 }
 
 .bubble-chart {
@@ -524,6 +524,7 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
 
 :global(.node) {
     cursor: pointer;
+    pointer-events: all;
 }
 
 :global(.node circle) {
@@ -532,5 +533,9 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 1.5);
 
 :global(.node:hover circle) {
     fill: #2a2a2a;
+}
+
+:global(svg) {
+    pointer-events: none;
 }
 </style> 

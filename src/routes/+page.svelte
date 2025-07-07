@@ -10,10 +10,10 @@
 			description: 'Container orchestration platform'
 		},
 		{
-			name: 'Docker',
-			svg: '/assets/icons/kubernets.svg',
-			proficiency: 5 as const,
-			description: 'Containerization platform'
+			name: 'Svelte',
+			svg: '/assets/icons/svelte.svg',
+			proficiency: 1 as const,
+			description: 'Frontend framework'
 		},
 		{
 			name: 'AWS',
@@ -23,14 +23,14 @@
 		},
 		{
 			name: 'React',
-			svg: '/assets/icons/kubernets.svg',
-			proficiency: 2 as const,
+			svg: '/assets/icons/react.svg',
+			proficiency: 4 as const,
 			description: 'Frontend framework'
 		},
 		{
-			name: 'TypeScript',
-			svg: '/assets/icons/kubernets.svg',
-			proficiency: 2 as const,
+			name: 'JavaScript',
+			svg: '/assets/icons/javascript.svg',
+			proficiency: 4 as const,
 			description: 'Typed JavaScript'
 		},
 		{
@@ -71,7 +71,7 @@
 		},
 		{
 			name: 'Python',
-			svg: '/assets/icons/kubernets.svg',
+			svg: '/assets/icons/python.svg',
 			proficiency: 3 as const,
 			description: 'Programming language'
 		},
@@ -88,10 +88,10 @@
 			description: 'NoSQL database'
 		},
 		{
-			name: 'Redis',
-			svg: '/assets/icons/kubernets.svg',
+			name: 'Go',
+			svg: '/assets/icons/go.svg',
 			proficiency: 2 as const,
-			description: 'In-memory database'
+			description: 'Programming language'
 		}
 	] satisfies Technology[];
 
@@ -138,7 +138,7 @@
 <p class="mb-0">
 	I love learning new technologies and understanding how things work from first principles. My
 	passion is to use computing to automate my life, build scalable systems, and create delightful
-	interactions. To these ends, I've learned the following tools. The sizes proportional to my
+	interactions. To these ends, I've learned the following tools. The sizes are proportional to my
 	proficiency.
 </p>
 <div>
