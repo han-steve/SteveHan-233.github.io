@@ -37,7 +37,7 @@ interface Node extends Technology, d3.SimulationNodeDatum {
 let svg: SVGElement | undefined = $state();
 let container: HTMLDivElement | undefined = $state();
 let width = $state(browser ? window.innerWidth : 1024); // Default width for SSR
-let height = $derived(width < 768 ? 500 : 400);
+let height = $derived(width < 768 ? 550 : 400);
 let centerX = $derived(width * 0.5);
 let centerY = $derived(height * 0.5);
 let simulation: d3.Simulation<Node, undefined>;
@@ -112,27 +112,26 @@ function getClusterCenters() {
     
     if (isMobile) {
         // Triangle arrangement for mobile - very compact
-        const verticalSpacing = height * 0.1; // Reduced from 0.15
-        const horizontalSpacing = width * 0.1; // Reduced from 0.2
+        const horizontalSpacing = width * 0.1;
         
         return types.reduce((acc, type, i) => {
             switch(i) {
                 case 0: // Top center
                     acc[type] = {
                         x: width / 2,
-                        y: height * 0.43 // Moved down from 0.4
+                        y: height * 0.4 
                     };
                     break;
                 case 1: // Bottom left
                     acc[type] = {
                         x: width / 2 - horizontalSpacing,
-                        y: height * 0.57 // Moved up from 0.6
+                        y: height * 0.57
                     };
                     break;
                 case 2: // Bottom right
                     acc[type] = {
                         x: width / 2 + horizontalSpacing,
-                        y: height * 0.57 // Moved up from 0.6
+                        y: height * 0.57
                     };
                     break;
             }
@@ -197,8 +196,8 @@ function initializeSimulation() {
     simulation = d3.forceSimulation(nodes)
         .force('charge', d3.forceManyBody().strength(-70))
         .force('collide', d3.forceCollide<Node>(d => d.r + 2).strength(0.9))
-        .force('x', d3.forceX<Node>(d => clusterCenters[d.type].x).strength(0.08))
-        .force('y', d3.forceY<Node>(d => clusterCenters[d.type].y).strength(0.08))
+        .force('x', d3.forceX<Node>(d => clusterCenters[d.type].x).strength(0.07))
+        .force('y', d3.forceY<Node>(d => clusterCenters[d.type].y).strength(0.07))
         .force('bounds', () => {
             nodes.forEach(d => {
                 if (d.x - d.r < paddingX) d.x = d.r + paddingX;
@@ -606,7 +605,7 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
 
 @media (max-width: 768px) {
     .bubble-chart-container {
-        --chart-height: 500px;
+        --chart-height: 550px;
     }
 }
 

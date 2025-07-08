@@ -3,6 +3,7 @@
 
 	import '../app.postcss';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
     import {fly} from "svelte/transition";
 	import type {LayoutData} from './$types';
 
@@ -25,3 +26,5 @@
 	{@render children?.()}
 </main>
 {/key}
+
+<Footer />
