@@ -220,7 +220,7 @@
 	I love learning new technologies and understanding how things work from first principles. My
 	passion is to use computing to build scalable automations, create delightful interactions, and
 	enhance our well-being. To these ends, I've learned the following tools. The sizes are
-	proportional to my proficiency.
+	proportional to my proficiency, and you can click on them to learn more.
 </p>
 <div>
 	<BubbleChart {technologies} />
