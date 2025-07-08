@@ -595,7 +595,7 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
 .bubble-chart-container {
     position: relative;
     margin: -50px -50vw;
-    height: var(--chart-height, 500px);
+    height: var(--chart-height, 400px);
     overflow: hidden;
     display: flex;
     align-items: center;

@@ -7,7 +7,8 @@
 			name: 'Kubernetes',
 			svg: '/assets/icons/kubernets.svg',
 			proficiency: 5 as const,
-			description: '2 YoE creating and operating production clusters with 3000+ nodes',
+			description:
+				'2 YoE creating and operating (and very, very occasionally breaking) production clusters with 3000+ nodes',
 			type: 'infra'
 		},
 		{
@@ -30,21 +31,23 @@
 			name: 'Prometheus',
 			svg: '/assets/icons/prometheus.svg',
 			proficiency: 2 as const,
-			description: 'Implemented observability solutions with Prometheus Operator, Grafana dashboards, and Grafana Alloy',
+			description:
+				'Implemented observability solutions with Prometheus Operator, Grafana dashboards, and Grafana Alloy',
 			type: 'infra'
 		},
 		{
 			name: 'ArgoCD',
 			svg: '/assets/icons/argocd.svg',
 			proficiency: 2 as const,
-			description: 'Developed production-ready clusters using ArgoCD GitOps, Helm, Kustomize, and Kargo multistage promotion',
+			description:
+				'Developed production-ready clusters using ArgoCD GitOps, Helm, Kustomize, and Kargo multistage promotion',
 			type: 'infra'
 		},
 		{
 			name: 'Kubeflow',
 			svg: '/assets/icons/kubeflow.svg',
-			proficiency: 3 as const,
-			description: 'Operated the Kubeflow ML platform used by hundreds of internal MLEs',
+			proficiency: 4 as const,
+			description: 'Operated the Kubeflow ML platform (Notebooks, Pipelines, Serving) used by hundreds of internal MLEs',
 			type: 'infra'
 		},
 		{
@@ -65,35 +68,37 @@
 			name: 'Svelte',
 			svg: '/assets/icons/svelte.svg',
 			proficiency: 2 as const,
-			description: 'Frontend framework',
+			description: 'You are looking at Svelte 5 and SvelteKit code right now!',
 			type: 'framework'
 		},
 		{
 			name: 'Vue',
 			svg: '/assets/icons/vue.svg',
 			proficiency: 2 as const,
-			description: 'Frontend framework',
+			description:
+				'Vue was my first web framework, and in my Vue it still has the best developer experience',
 			type: 'framework'
 		},
 		{
 			name: 'React',
 			svg: '/assets/icons/react.svg',
 			proficiency: 5 as const,
-			description: 'Frontend framework',
+			description:
+				'Developed production React applications for startups and big companies with React, Redux, and Material UI',
 			type: 'framework'
 		},
 		{
 			name: 'Nextjs',
 			svg: '/assets/icons/nextjs.svg',
 			proficiency: 1.5 as const,
-			description: 'Frontend framework',
+			description: 'Adopted latest frontend tooling such as Next.js and TurboPack',
 			type: 'framework'
 		},
 		{
 			name: 'Expo',
 			svg: '/assets/icons/expo.svg',
 			proficiency: 3 as const,
-			description: 'Frontend framework',
+			description: 'Developed cross-platform mobile apps using Expo and React Native',
 			type: 'framework',
 			padding: 0.4
 		},
@@ -101,15 +106,17 @@
 			name: 'PyTorch',
 			svg: '/assets/icons/pytorch.svg',
 			proficiency: 3 as const,
-			description: 'Frontend framework',
+			description:
+				'Conducted ML research, distributed training, and inference optimization with PyTorch',
 			type: 'framework',
 			padding: 0.4
 		},
 		{
 			name: 'Ray',
 			svg: '/assets/icons/ray.svg',
-			proficiency: 3 as const,
-			description: 'Frontend framework',
+			proficiency: 5 as const,
+			description:
+				'Built the Ray infrastructure at my company and drove its widespread adoption for training foundation models',
 			type: 'framework',
 			padding: 0.4
 		},
@@ -117,43 +124,53 @@
 			name: 'JavaScript',
 			svg: '/assets/icons/javascript.svg',
 			proficiency: 4 as const,
-			description: 'Typed JavaScript',
+			description:
+				'TypeScript is preferred. Despite loving the "You Don\'t Know JS" books, I do know something about JavaScript',
 			type: 'language',
 			padding: 0.5
 		},
 		{
 			name: 'HTML&CSS',
 			svg: '/assets/icons/htmlcss.svg',
-			proficiency: 2 as const,
-			description: 'Programming language',
+			proficiency: 3 as const,
+			description:
+				'Can write sematic HTML and responsive CSS without AI. By the way are they programming languages?',
 			type: 'language'
 		},
 		{
 			name: 'C++',
 			svg: '/assets/icons/c++.svg',
 			proficiency: 2 as const,
-			description: 'JavaScript runtime',
+			description: 'Language of choice for computer graphics and robotics research infrastructure',
 			type: 'language'
 		},
 		{
 			name: 'Python',
 			svg: '/assets/icons/python.svg',
 			proficiency: 3 as const,
-			description: 'Programming language',
+			description: "If you give me a LeetCode question, I'm doing it in Python",
 			type: 'language'
 		},
 		{
 			name: 'Java',
 			svg: '/assets/icons/java.svg',
 			proficiency: 2 as const,
-			description: 'Programming language',
+			description: 'Will use it if I have to (talking about you, Amazon)',
 			type: 'language'
 		},
 		{
 			name: 'Go',
 			svg: '/assets/icons/go.svg',
 			proficiency: 5 as const,
-			description: 'Programming language',
+			description:
+				'Wrote backends, Kubernetes controllers, and just about everything else in Go because I love it so much',
+			type: 'language'
+		},
+		{
+			name: 'Rust',
+			svg: '/assets/icons/rust.svg',
+			proficiency: 1.5 as const,
+			description: 'Succumbed to peer pressure and read the Rust book',
 			type: 'language'
 		}
 	];
@@ -201,9 +218,9 @@
 <!-- <p class="italic text-neutral-500 font-[Newsreader] text-lg"> -->
 <p class="mb-0">
 	I love learning new technologies and understanding how things work from first principles. My
-	passion is to use computing to automate my life, build scalable systems, and create delightful
-	interactions. To these ends, I've learned the following tools. The sizes are proportional to my
-	proficiency.
+	passion is to use computing to build scalable automations, create delightful interactions, and
+	enhance our well-being. To these ends, I've learned the following tools. The sizes are
+	proportional to my proficiency.
 </p>
 <div>
 	<BubbleChart {technologies} />
@@ -211,12 +228,13 @@
 
 <p>
 	I graduated from the <em>University of Texas at Austin</em> with a Masters and a Bachelors in Computer
-	Science, a Bachelors in Math, and a certificate in Spanish. Some projects I worked on are:
+	Science, a Bachelors in Math, and a certificate in Spanish.
 </p>
 
+<!-- 
 {#each projects as project}
 	<ProjectCard {...project} />
-{/each}
+{/each} -->
 
 <style>
 	:global(body) {
