@@ -90,7 +90,7 @@
 				<a href="/">Steve Han.</a>
 			</h1>
 			<p in:fly={{ y: 10, delay: 2000, easing: cubicOut, duration: 500 }} class="text-base/5">
-				<span class="light">I'm a</span> software engineer<span class="light">,</span><br />
+				<span class="light">I'm a</span> machine learning engineer<span class="light">,</span><br />
 				full-stack developer<span class="light">, <br />and</span> designer<span class="light"
 					>.</span
 				>

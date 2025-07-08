@@ -1,4 +1,6 @@
 <script lang="ts">
+	export const prerender = true;
+
 	import { run } from 'svelte/legacy';
 
 	import '../app.postcss';
