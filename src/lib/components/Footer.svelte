@@ -1,4 +1,4 @@
-<footer class="layout-md mt-20 text-md flex flex-col">
+<footer class="layout-md mt-20 text-md flex flex-col lg:mb-20">
   <div class="row">
     <span>LinkedIn</span>
     <hr />

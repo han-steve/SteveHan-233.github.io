@@ -20,6 +20,7 @@ import { headerAnimationComplete } from '../stores';
 
 // Scale factor for bubble sizes based on proficiency
 const BUBBLE_SIZE_SCALE = 10;
+const MOBILE_BREAKPOINT = 600; // Accommodate iPhone Pro Max horizontal layout
 
 interface Node extends Technology, d3.SimulationNodeDatum {
     id: number;
@@ -37,7 +38,7 @@ interface Node extends Technology, d3.SimulationNodeDatum {
 let svg: SVGElement | undefined = $state();
 let container: HTMLDivElement | undefined = $state();
 let width = $state(browser ? window.innerWidth : 1024); // Default width for SSR
-let height = $derived(width < 768 ? 550 : 400);
+let height = $derived(width < MOBILE_BREAKPOINT ? 550 : 400);
 let centerX = $derived(width * 0.5);
 let centerY = $derived(height * 0.5);
 let simulation: d3.Simulation<Node, undefined>;
@@ -106,7 +107,7 @@ function debouncedScroll() {
 
 // Define cluster centers based on screen size
 function getClusterCenters() {
-    const isMobile = width < 768; // Standard mobile breakpoint
+    const isMobile = width < MOBILE_BREAKPOINT; // Use consistent breakpoint
     const types = ['infra', 'framework', 'language'] as const;
     const maxContentWidth = 800; // Maximum content width
     
@@ -164,37 +165,60 @@ function initializeSimulation() {
 
     // Get cluster centers based on current screen size
     const clusterCenters = getClusterCenters();
+    const isMobile = width < 768;
 
     // Initialize positions before creating nodes
     nodes.forEach(node => {
-        const angle = Math.random() * Math.PI * 2;
-        const distance = Math.max(width, height, 1000) * 3;
-        const side = Math.floor(Math.random() * 4);
-        
-        switch(side) {
-            case 0: // top
-                node.x = Math.random() * width;
-                node.y = -distance;
-                break;
-            case 1: // right
-                node.x = width + distance;
-                node.y = Math.random() * height;
-                break;
-            case 2: // bottom
-                node.x = Math.random() * width;
-                node.y = height + distance;
-                break;
-            case 3: // left
-                node.x = -distance;
-                node.y = Math.random() * height;
-                break;
+        if (isMobile) {
+            // Mobile-specific initialization based on node type
+            const center = clusterCenters[node.type];
+            const distance = 3000; // Distance from edge
+            
+            switch(node.type) {
+                case 'infra': // Top center group
+                    node.x = center.x + (Math.random() - 0.5) * width * 0.5; // Spread horizontally
+                    node.y = -distance; // Start from above
+                    break;
+                case 'framework': // Bottom left group
+                    node.x = -distance; // Start from left
+                    node.y = height + distance; // and below
+                    break;
+                case 'language': // Bottom right group
+                    node.x = width + distance; // Start from right
+                    node.y = height + distance; // and below
+                    break;
+            }
+        } else {
+            // Desktop initialization (keep existing wide spread)
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.max(width, height) * 3;
+            const side = Math.floor(Math.random() * 4);
+            
+            switch(side) {
+                case 0: // top
+                    node.x = Math.random() * width;
+                    node.y = -distance;
+                    break;
+                case 1: // right
+                    node.x = width + distance;
+                    node.y = Math.random() * height;
+                    break;
+                case 2: // bottom
+                    node.x = Math.random() * width;
+                    node.y = height + distance;
+                    break;
+                case 3: // left
+                    node.x = -distance;
+                    node.y = Math.random() * height;
+                    break;
+            }
         }
         node.vx = 0;
         node.vy = 0;
     });
 
     simulation = d3.forceSimulation(nodes)
-        .force('charge', d3.forceManyBody().strength(-70))
+        .force('charge', d3.forceManyBody().strength(-80))
         .force('collide', d3.forceCollide<Node>(d => d.r + 2).strength(0.9))
         .force('x', d3.forceX<Node>(d => clusterCenters[d.type].x).strength(0.07))
         .force('y', d3.forceY<Node>(d => clusterCenters[d.type].y).strength(0.07))
@@ -603,7 +627,7 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
     pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .bubble-chart-container {
         --chart-height: 550px;
     }
@@ -637,4 +661,4 @@ let maxRadius = $derived(Math.max(...nodes.map(n => n.r)) * 2);
 :global(svg) {
     pointer-events: none;
 }
-</style> 
+</style>

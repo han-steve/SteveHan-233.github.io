@@ -33,11 +33,11 @@
 		}, 2000);
 		setTimeout(() => {
 			verticalCenter = false;
-			document.body.style.overflow = 'auto';
 		}, 3000);
 		setTimeout(() => {
 			headerAnimationComplete.set(true);
-		}, 3600);
+			document.body.style.overflow = 'auto';
+		}, 4000);
 	};
 
 	// Bear with me - this is very hacky. It's meant to solve flash of ugliness.
